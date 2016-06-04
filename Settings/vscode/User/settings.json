@@ -3,11 +3,11 @@
     "editor.rulers": [100],
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    
-    "rust.racerPath": "C:\\Users\\tberry\\.cargo\\bin\\racer.exe", // Specifies path to Racer binary if it's not in PATH
-    "rust.rustLangSrcPath": "C:\\Program Files\\Rust stable GNU 1.8\\src", // Specifies path to /src directory of local copy of Rust sources
-    "rust.rustfmtPath": "C:\\Users\\tberry\\.cargo\\bin\\rustfmt.exe", // Specifies path to Rustfmt binary if it's not in PATH
-    "rust.cargoPath": "C:\\Program Files\\Rust stable GNU 1.8\\bin\\cargo.exe", // Specifies path to Cargo binary if it's not in PATH
+
+    "rust.racerPath": null, // Specifies path to Racer binary if it's not in PATH
+    "rust.rustLangSrcPath": null, // Specifies path to /src directory of local copy of Rust sources
+    "rust.rustfmtPath": null, // Specifies path to Rustfmt binary if it's not in PATH
+    "rust.cargoPath": null, // Specifies path to Cargo binary if it's not in PATH
     "rust.cargoHomePath": null, // Path to Cargo home directory, mostly needed for racer. Needed only if using custom rust installation.
     "rust.formatOnSave": false, // Turn on/off autoformatting file on save (EXPERIMENTAL)
     "rust.checkOnSave": true, // Turn on/off `cargo check` project on save (EXPERIMENTAL)
