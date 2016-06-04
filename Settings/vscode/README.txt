@@ -1,1 +1,0 @@
-On Windows, this folder was located at %appdata%/Roaming/Code/User.
