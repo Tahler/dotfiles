@@ -3,6 +3,8 @@
 	email = tyler@berryac.com
 [core]
 	autocrlf = true
+[help]
+	autocorrect = 5
 [alias]
 	cp = cherry-pick
 	st = status -s
@@ -11,7 +13,7 @@
 	cmm = commit -m
 	cma = commit -a
 	cmam = commit -a -m
-	cmAm = "!git add . && git commit -m"
+	cmAm = "!git add -A && git commit -m"
 	co = checkout
 	cob = checkout -b
 	br = branch
