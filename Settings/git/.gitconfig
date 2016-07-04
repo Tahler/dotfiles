@@ -3,6 +3,8 @@
 	email = tyler@berryac.com
 [core]
 	autocrlf = true
+[push]
+	default = simple
 [help]
 	autocorrect = 5
 [alias]
