@@ -3,8 +3,6 @@
 	email = tyler@berryac.com
 [push]
 	default = simple
-[help]
-	autocorrect = 5
 [alias]
 	cp = cherry-pick
 	st = status -s
