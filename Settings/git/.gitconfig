@@ -20,12 +20,14 @@
 
 	absorb = "!git merge $1 && git branch -d $1"
 
+	clean-ignored = clean -Xdf
+
 	redo = commit --amend --no-edit
 
 	r = reset
 	r1 = reset HEAD^
 	r2 = reset HEAD^^
-	
+
 	rf = "!git checkout HEAD -- $1"
 
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
