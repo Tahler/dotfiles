@@ -4,17 +4,19 @@
 [push]
 	default = simple
 [alias]
-	cp = cherry-pick
 	st = status -s
-	cl = clone
 	cm = commit
 	cmm = commit -m
 	cma = commit -a
 	cmam = commit -a -m
 	cmAm = "!git add -A && git commit -m"
+	rb = rebase
+	rbi = rebase -i
 	co = checkout
 	cob = checkout -b
+	cp = cherry-pick
 	br = branch
+	cl = clone
 	diff = diff --word-diff
 	dc = diff --cached
 
