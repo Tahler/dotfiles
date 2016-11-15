@@ -1,71 +1,153 @@
-" set UTF-8 encoding
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
-" use indentation of previous line
-set autoindent
-" use intelligent indentation for C
-set smartindent
-" configure tabwidth and insert spaces instead of tabs
-set tabstop=2        " tab width is 4 spaces
-set shiftwidth=2     " indent also with 4 spaces
-set expandtab        " expand tabs to spaces
-set textwidth=100
-" turn syntax highlighting on
-set t_Co=256
-syntax on
-" colorscheme wombat256
-" turn line numbers on
-set number
-" highlight matching braces
-set showmatch
-" intelligent comments
-set comments=sl:/*,mb:\ *,elx:\ */
-
-" Install OmniCppComplete like described on http://vim.wikia.com/wiki/C++_code_completion
-" This offers intelligent C++ completion when typing ‘.’ ‘->’ or <C-o>
-" Load standard tag files
-set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
-set tags+=~/.vim/tags/sdl
-set tags+=~/.vim/tags/qt4
-
-" Install DoxygenToolkit from http://www.vim.org/scripts/script.php?script_id=987
-let g:DoxygenToolkit_authorName="John Doe <john@doe.com>"
-
-" Enhanced keyboard mappings
+" Beginners .vimrc
+" v0.1 2012-10-22 Philip Thrasher
 "
-" in normal mode F2 will save the file
-nmap <F2> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-imap <F2> <ESC>:w<CR>i
-" switch between header/source with F4
-map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
-" recreate tags file with F5
-map <F5> :!ctags -R –c++-kinds=+p –fields=+iaS –extra=+q .<CR>
-" create doxygen comment
-map <F6> :Dox<CR>
-" build using makeprg with <F7>
-map <F7> :make<CR>
-" build using makeprg with <S-F7>
-map <S-F7> :make clean all<CR>
-" goto definition with F12
-map <F12> <C-]>
-" in diff mode we use the spell check keys for merging
-if &diff
-  ” diff settings
-  map <M-Down> ]c
-  map <M-Up> [c
-  map <M-Left> do
-  map <M-Right> dp
-  map <F9> :new<CR>:read !svn diff<CR>:set syntax=diff buftype=nofile<CR>gg
-else
-  " spell settings
-  :setlocal spell spelllang=en
-  " set the spellfile - folders must exist
-  set spellfile=~/.vim/spellfile.add
-  map <M-Down> ]s
-  map <M-Up> [s
-endif
+" Important things for beginners:
+" * Start out small... Don't jam your vimrc full of things you're not ready to
+"   immediately use.
+" * Read other people's vimrc's.
+" * Use a plugin manager for christ's sake! (I highly recommend vundle)
+" * Spend time configuring your editor... It's important. Its the tool you
+"   spend 8 hours a day crafting your reputation.
+" * remap stupid things to new keys that make you more efficient.
+" * Don't listen to the haters that complain about using non-default
+"   key-bindings. Their argument is weak. I spend most of my time in the editor
+"   on my computer, not others, so I don't care if customizing vim means I'll
+"   have a harder time using remote vim.
+"
+" Below I've left some suggestions of good default settings to have in a bare
+" minimal vimrc. You only what you want to use, and nothing more. I've heavily
+" commented each, and these are what I consider bare necessities, my workflow
+" absolutely depends on these things.
+"
+" If you have any questions, email me at pthrash@me.com
+
+" Setup Vundle:
+" For this to work, you must install the vundle plugin manually.
+" https://github.com/gmarik/vundle
+" To install vundle, copy all the files from the repo into your respective
+" folders within ~/.vim
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+" Vundle let's you specify a plugin in a number of formats, but my favorite
+" allows you to grab plugins straight off of github, just specify the bundle
+" in the following format:
+" Bundle 'githubUsername/repoName'
+
+" Let vundle manage itself:
+Bundle 'gmarik/vundle'
+
+" Just a lot of color schemes.
+" https://github.com/flazz/vim-colorschemes#current-colorschemes
+Bundle 'flazz/vim-colorschemes'
+
+" Fuzzy finder -- absolutely must have.
+Bundle 'kien/ctrlp.vim'
+
+" Support for easily toggling comments.
+Bundle 'tpope/vim-commentary'
+
+" In addtion to the above plugins, you'll likely need some for individual
+" non-standard syntaxes that aren't pre-bundled with vim. Here are some I use,
+" these are required for me, but depending on what code you write, obviously
+" this may differ for you.
+
+" Proper JSON filetype detection, and support.
+Bundle 'leshill/vim-json'
+
+" I write markdown a lot. This is a good syntax.
+Bundle 'tpope/vim-markdown'
+
+" We have to turn this stuff back on if we want all of our features.
+filetype plugin indent on " Filetype auto-detection
+syntax on " Syntax highlighting
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab " use spaces instead of tabs.
+set smarttab " let's tab key insert 'tab stops', and bksp deletes tabs.
+set shiftround " tab / shifting moves to closest tabstop.
+set autoindent " Match indents on new lines.
+set smartindent " Intellegently dedent / indent new lines based on rules.
+set number " Show line numbers
+
+" We have VCS -- we don't need this stuff.
+set nobackup " We have vcs, we don't need backups.
+set nowritebackup " We have vcs, we don't need backups.
+set noswapfile " They're just annoying. Who likes them?
+
+" don't nag me when hiding buffers
+set hidden " allow me to have buffers with unsaved changes.
+set autoread " when a file has changed on disk, just load it. Don't ask.
+
+" Make search more sane
+set ignorecase " case insensitive search
+set smartcase " If there are uppercase letters, become case-sensitive.
+set incsearch " live incremental searching
+set showmatch " live match highlighting
+set hlsearch " highlight matches
+set gdefault " use the `g` flag by default.
+
+" allow the cursor to go anywhere in visual block mode.
+set virtualedit+=block
+
+" leader is a key that allows you to have your own "namespace" of keybindings.
+" You'll see it a lot below as <leader>
+let mapleader = ","
+
+" So we don't have to press shift when we want to get into command mode.
+nnoremap ; :
+vnoremap ; :
+
+" So we don't have to reach for escape to leave insert mode.
+inoremap jf <esc>
+
+" create new vsplit, and switch to it.
+noremap <leader>v <C-w>v
+
+" bindings for easy split nav
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Use sane regex's when searching
+nnoremap / /\v
+vnoremap / /\v
+
+" Clear match highlighting
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+
+" Quick buffer switching - like cmd-tab'ing
+nnoremap <leader><leader> <c-^>
+
+" Visual line nav, not real line nav
+" If you wrap lines, vim by default won't let you move down one line to the
+" wrapped portion. This fixes that.
+noremap j gj
+noremap k gk
+
+" Plugin settings:
+" Below are some 'sane' (IMHO) defaults for a couple of the above plugins I
+" referenced.
+
+" Map the key for toggling comments with vim-commentary
+nnoremap <leader>c <Plug>CommentaryLine
+
+" Remap ctrlp to ctrl-t -- map it however you like, or stick with the
+" defaults. Additionally, in my OS, I remap caps lock to control. I never use
+" caps lock. This is highly recommended.
+let g:ctrlp_map = '<c-t>'
+
+" Let ctrlp have up to 30 results.
+let g:ctrlp_max_height = 30
+
+" Finally the color scheme. Choose whichever you want from the list in the
+" link above (back up where we included the bundle of a ton of themes.)
+colorscheme ubuntu
+" No background color
+hi Normal ctermbg=none
