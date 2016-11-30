@@ -1,5 +1,4 @@
 # Installation
 
-1. Copy .vimrc to ~/.vimrc
-2. Copy ubuntu.vim to ~/.vim/colors/
+1. Run install.sh which creates the appropriate symlinks to `.vimrc` and `ubuntu.vim`
 
