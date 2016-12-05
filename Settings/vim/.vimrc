@@ -108,6 +108,9 @@ vnoremap <space> zf
 nnoremap <C-_> :Commentary<cr>
 vnoremap <C-_> :Commentary<cr>
 
+" Let Simpylfold show the Python docstrings
+let g:SimpylFold_docstring_preview=1
+
 " Remap ctrl-p to ctrl-t
 let g:ctrlp_map = '<c-t>'
 
