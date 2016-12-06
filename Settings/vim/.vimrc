@@ -117,6 +117,12 @@ let g:ctrlp_map = '<c-t>'
 " Let ctrl-p have up to 30 results.
 let g:ctrlp_max_height = 30
 
+" Highlight trailing whitespace
+match ErrorMsg '\s\+$'
+
+" Delete trailing whitespace
+nnoremap <Leader>w :%s/\s\+$//e<CR>
+
 " Color scheme (looks in ~/.vim/colors)
 colorscheme ubuntu
 " No background color
