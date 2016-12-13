@@ -6,7 +6,7 @@ rc_file="$HOME/.inputrc"
 if [ -f "$rc_file" ] ; then
   rm "$rc_file"
 fi
-ln -s "${SCRIPT_PATH}/.inputrc" "$rc_file"
+ln "${SCRIPT_PATH}/.inputrc" "$rc_file"
 
 source "$rc_file"
 

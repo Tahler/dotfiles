@@ -6,5 +6,5 @@ conf_file="$HOME/.gitconfig"
 if [ -f "$conf_file" ] ; then
   rm "$conf_file"
 fi
-ln -s "${SCRIPT_PATH}/.gitconfig" "$conf_file"
+ln "${SCRIPT_PATH}/.gitconfig" "$conf_file"
 
