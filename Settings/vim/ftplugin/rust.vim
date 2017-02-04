@@ -2,8 +2,6 @@ set hidden
 let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
-setlocal omnifunc=racer#RacerComplete
-
 nmap gd <Plug>(rust-def)
 nmap gs <Plug>(rust-def-split)
 nmap gx <Plug>(rust-def-vertical)

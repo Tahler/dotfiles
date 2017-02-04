@@ -19,6 +19,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Better '%' matching
 Plugin 'tmhedberg/matchit'
+" Git wrapping
+Plugin 'tpope/vim-fugitive'
 " Support for easily toggling comments
 Plugin 'tpope/vim-commentary'
 " Surround text with chars (brackets, etc.)
