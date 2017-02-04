@@ -16,7 +16,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Python code folding
 Plugin 'tmhedberg/SimpylFold'
 " Fuzzy finder
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Better '%' matching
 Plugin 'tmhedberg/matchit'
 " Support for easily toggling comments
