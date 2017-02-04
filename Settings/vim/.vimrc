@@ -87,8 +87,8 @@ set autoread
 
 " Persistent undo: undo even after closing a buffer or vim
 try
-    set undodir=~/.vim/tmp/undo
-    set undofile
+  set undodir=~/.vim/tmp/undo
+  set undofile
 catch
 endtry
 
@@ -204,9 +204,9 @@ let g:ctrlp_max_height = 30
 
 " Delete trailing whitespace on save
 func! DeleteTrailingWhitespace()
-    exe "normal mz"
-    %s/\s\+$//ge
-    exe "normal `z"
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
 endfunc
 autocmd BufWrite *.* :call DeleteTrailingWhitespace()
 
@@ -215,9 +215,9 @@ let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 function! XTermPasteBegin()
-    set pastetoggle=<Esc>[201~
-    set paste
-    return ""
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
