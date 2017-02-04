@@ -151,6 +151,9 @@ vnoremap ; :
 " Remap 0 to first non-blank char
 nnoremap 0 ^
 
+" Ctrl-d closes current buffer
+nmap <C-d> :bd<cr>
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
