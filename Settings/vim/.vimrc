@@ -1,130 +1,222 @@
-" Setup Vundle:
-" For this to work, you must install the vundle plugin manually.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle and Plugin Setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" For this to work, install vundle manually
 " https://github.com/gmarik/vundle
-" To install vundle, copy all the files from the repo into your respective
-" folders within ~/.vim
+
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
-" Let vundle manage itself:
-Plugin 'gmarik/vundle'
-
+" Let vundle manage itself
+Plugin 'VundleVim/Vundle.vim'
 " Python code folding
 Plugin 'tmhedberg/SimpylFold'
-
-" Just a lot of color schemes.
-" https://github.com/flazz/vim-colorschemes#current-colorschemes
-Plugin 'flazz/vim-colorschemes'
-
 " Fuzzy finder
 Plugin 'kien/ctrlp.vim'
-
-" Support for easily toggling comments.
+" Better '%' matching
+Plugin 'tmhedberg/matchit'
+" Support for easily toggling comments
 Plugin 'tpope/vim-commentary'
-
-Plugin 'leshill/vim-json'
-
+" Surround text with chars (brackets, etc.)
+Plugin 'tpope/vim-surround'
+" Ability to repeat (. command) tpope plugin commands
+Plugin 'tpope/vim-repeat'
+" Many colorschemes
+Plugin 'flazz/vim-colorschemes'
+" JSON highlighting
+Plugin 'elzr/vim-json'
+" Markdown highlighting
 Plugin 'tpope/vim-markdown'
+" Rust highlighting
+Plugin 'rust-lang/rust.vim'
+" Rust intellisense
+Plugin 'racer-rust/vim-racer'
 
-" We have to turn this stuff back on if we want all of our features.
-filetype plugin indent on " Filetype auto-detection
-syntax on " Syntax highlighting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Filetype auto-detection
+filetype plugin indent on
+
+set encoding=utf8
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab " use spaces instead of tabs.
-set smarttab " let's tab key insert 'tab stops', and bksp deletes tabs.
-set shiftround " tab / shifting moves to closest tabstop.
-set autoindent " Match indents on new lines.
-set smartindent " Intellegently dedent / indent new lines based on rules.
-set number " Show line numbers
+" use spaces instead of tabs.
+set expandtab
+" lets tab key insert 'tab stops' and bksp deletes tabs
+set smarttab
+" tab / shifting moves to closest tabstop.
+set shiftround
+" Match indents on new lines.
+set autoindent
+" Intellegently dedent / indent new lines based on rules.
+set smartindent
+" Show line numbers
+set number
+" Show filename
+set laststatus=2
+" Always show current position
+set ruler
+" Buffer 5 lines to the cursor vertically
+set so=5
+" Wrap lines to the window buffer
+set wrap
+" Show column line at 80
+set colorcolumn=80
 
-" We have VCS -- we don't need this stuff.
-set nobackup " We have vcs, we don't need backups.
-set nowritebackup " We have vcs, we don't need backups.
-set noswapfile " They're just annoying. Who likes them?
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
-" No nagging when hiding buffers
-set hidden " allow me to have buffers with unsaved changes.
-set autoread " when a file has changed on disk, just load it. Don't ask.
+" VCS makes backups and .swp files obsolete - disable them
+set nobackup
+set nowritebackup
+set noswapfile
 
-" Make search more sane
-set ignorecase " case insensitive search
-set smartcase " If there are uppercase letters, become case-sensitive.
-set incsearch " live incremental searching
-set showmatch " live match highlighting
-set hlsearch " highlight matches
-set gdefault " use the `g` flag by default.
+""" No nagging when hiding buffers
+" allow buffers with unsaved changes
+set hidden
+" when a file has changed on disk load it without asking
+set autoread
 
-" allow the cursor to go anywhere in visual block mode.
+" Persistent undo: undo even after closing a buffer or vim
+try
+    set undodir=~/.vim/tmp/undo
+    set undofile
+catch
+endtry
+
+" case insensitive search
+set ignorecase
+" If there are uppercase letters, become case-sensitive.
+set smartcase
+" live incremental searching
+set incsearch
+" live match highlighting
+set showmatch
+" highlight matches
+set hlsearch
+" use the `g` flag by default.
+set gdefault
+" Regular expressions in search
+set magic
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" Allow the cursor to go anywhere in visual block mode.
 set virtualedit+=block
 
-" Get to command mode via ';' rather than ':'
+" No sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Keep folds open on load
+set foldlevelstart=20
+
+" Turn on the wild menu
+set wildmenu
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key Mappings and Macros
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" leader is a key that allows you to have your own 'namespace' of keybindings
+" Referenced below as <leader>
+let mapleader = ","
+let g:mapleader = ","
+
+" Get to command mode via ';'
 nnoremap ; :
 vnoremap ; :
 
-" leader is a key that allows you to have your own "namespace" of keybindings
-" Referenced below as <leader>
-let mapleader = ","
+" Remap 0 to first non-blank char
+nnoremap 0 ^
 
-" bindings for easy split nav
+" Delete trailing whitespace
+nnoremap <Leader>w :%s/\s\+$//e<CR>
+
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+command W w !sudo tee % > /dev/null
+
+" Faster movement between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Use sane regexs when searching
-nnoremap / /\v
-vnoremap / /\v
-
 " Clear match highlighting
-noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Quick buffer switching - like cmd-tab'ing
 nnoremap <leader><leader> <c-^>
 
-" Visual line nav, not real line nav
-" If you wrap lines, vim by default won't let you move down one line to the
-" wrapped portion. This fixes that.
+" Move down on wrapped lines
 noremap j gj
 noremap k gk
 
-" Keep folds open on load
-set foldlevelstart=20
+" 'Visual select' current word
+nmap <leader>v viw
+" 'Visual select' current line
+nmap <leader>V 0v$h
 
 " Fold with spacebar
 nnoremap <space> za
 vnoremap <space> zf
 
-" Plugin settings:
-" Below are some 'sane' (IMHO) defaults for a couple of the above plugins I
-" referenced.
+""" Plugin remappings
 
-" Map the key for toggling comments with vim-commentary
+" Map '/' to toggle comments with vim-commentary
 nnoremap <C-_> :Commentary<cr>
 vnoremap <C-_> :Commentary<cr>
+
+" Faster visual surround
+vmap ( S)
+vmap ) S(
+vmap [ S]
+vmap ] S[
+vmap { S}
+vmap } S{
+vmap " S"
+vmap ' S'
+vmap ` S`
 
 " Let Simpylfold show the Python docstrings
 let g:SimpylFold_docstring_preview=1
 
-" Remap ctrl-p to ctrl-t
-let g:ctrlp_map = '<c-t>'
+" Remap ctrl-p to ctrl-e
+let g:ctrlp_map = '<c-e>'
 
 " Let ctrl-p have up to 30 results.
 let g:ctrlp_max_height = 30
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors and Highlighting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Syntax highlighting
+syntax on
+
 " Highlight trailing whitespace
 match ErrorMsg '\s\+$'
 
-" Delete trailing whitespace
-nnoremap <Leader>w :%s/\s\+$//e<CR>
-
-" Color scheme (looks in ~/.vim/colors)
-colorscheme ubuntu
+" Found in ~/.vim/colors
+colorscheme custom-material
 " No background color
 hi Normal ctermbg=none
 
