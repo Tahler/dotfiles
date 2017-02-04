@@ -8,9 +8,6 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ] ; then
     git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
 fi
 
-# Install vim plugins
-vim +PluginInstall +qall
-
 # Link vimrc
 rc_file="$HOME/.vimrc"
 if [ -f "$rc_file" ] ; then
@@ -20,9 +17,12 @@ ln "${SCRIPT_PATH}/.vimrc" "$rc_file"
 
 # Link color scheme
 mkdir -p "$HOME/.vim/colors"
-color_file="$HOME/.vim/colors/ubuntu.vim"
+color_file="$HOME/.vim/colors/custom-material.vim"
 if [ -f "$color_file" ] ; then
   rm "$color_file"
 fi
-ln "${SCRIPT_PATH}/ubuntu.vim" "$color_file"
+ln "${SCRIPT_PATH}/custom-material.vim" "$color_file"
+
+# Install vim plugins
+vim +PluginInstall +qall
 
