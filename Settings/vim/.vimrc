@@ -59,6 +59,8 @@ set autoindent
 set smartindent
 " Show line numbers
 set number
+" Show relative line number, which shows a 'hybrid' number view
+set relativenumber
 " Show filename
 set laststatus=2
 " Always show current position
