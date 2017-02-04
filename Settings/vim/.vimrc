@@ -19,6 +19,8 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Better '%' matching
 Plugin 'tmhedberg/matchit'
+" Text alignment
+Plugin 'godlygeek/tabular'
 " Git wrapping
 Plugin 'tpope/vim-fugitive'
 " Support for easily toggling comments
@@ -32,7 +34,7 @@ Plugin 'flazz/vim-colorschemes'
 " JSON highlighting
 Plugin 'elzr/vim-json'
 " Markdown highlighting
-Plugin 'tpope/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 " Rust highlighting
 Plugin 'rust-lang/rust.vim'
 " Rust intellisense
