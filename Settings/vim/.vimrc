@@ -147,9 +147,6 @@ vnoremap ; :
 " Remap 0 to first non-blank char
 nnoremap 0 ^
 
-" Delete trailing whitespace
-nnoremap <Leader>w :%s/\s\+$//e<CR>
-
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
@@ -204,6 +201,14 @@ let g:ctrlp_map = '<c-e>'
 
 " Let ctrl-p have up to 30 results.
 let g:ctrlp_max_height = 30
+
+" Delete trailing whitespace on save
+func! DeleteTrailingWhitespace()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+autocmd BufWrite *.* :call DeleteTrailingWhitespace()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Highlighting
