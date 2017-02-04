@@ -8,7 +8,7 @@ if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ] ; then
     git clone https://github.com/VundleVim/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
 fi
 
-# Link vimrc
+# Link `.vimrc`
 rc_file="$HOME/.vimrc"
 if [ -f "$rc_file" ] ; then
   rm "$rc_file"
@@ -16,13 +16,13 @@ fi
 ln "${SCRIPT_PATH}/.vimrc" "$rc_file"
 
 # Link color scheme
-mkdir -p "$HOME/.vim/colors"
-color_file="$HOME/.vim/colors/custom-material.vim"
-if [ -f "$color_file" ] ; then
-  rm "$color_file"
+# Note: this is destructive - removes `~/.vim/colors` directory if it exists
+colors_dir="$HOME/.vim/colors"
+if [ -f "$colors_dir" ] ; then
+  rm "$colors_dir"
 fi
-ln "${SCRIPT_PATH}/custom-material.vim" "$color_file"
+ln -s "${SCRIPT_PATH}/colors" "$colors_dir"
 
-# Install vim plugins
+# Install plugins
 vim +PluginInstall +qall
 
