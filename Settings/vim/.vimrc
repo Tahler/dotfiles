@@ -124,11 +124,11 @@ set virtualedit+=block
 " No sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
 set tm=500
 
 " Return to last edit position when opening files
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
+      \ | exe "normal! g'\"" | endif
 
 " Keep folds open on load
 set foldlevelstart=20
@@ -139,7 +139,8 @@ set wildmenu
 set wildignore=*.o,*~,*.pyc
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 " CtrlP should ignore the same files that Git does
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_user_command =
+      \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mappings and Macros
