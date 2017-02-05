@@ -161,6 +161,10 @@ nnoremap 0 ^
 " Ctrl-d closes current buffer
 nmap <C-d> :bd<cr>
 
+" Clear match highlighting
+noremap <silent> <leader><space>
+      \ :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
@@ -174,9 +178,6 @@ nnoremap <C-l> <C-w>l
 " Move up and down in autocomplete with <c-j> and <c-k>
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
-
-" Clear match highlighting
-noremap <silent> <leader><space> :noh<cr>:call clearmatches()<cr>
 
 " Quick buffer switching - like cmd-tab'ing
 nnoremap <leader><leader> <c-^>
