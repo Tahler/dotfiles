@@ -233,6 +233,11 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
+" Helper cmd named 'R' to run a command with output in a new scratch buffer
+:command! -nargs=* -complete=shellcmd R new
+      \ | setlocal buftype=nofile bufhidden=hide noswapfile
+      \ | r !<args>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
