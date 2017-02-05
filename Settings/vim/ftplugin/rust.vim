@@ -5,7 +5,7 @@ let g:racer_cmd = "$HOME/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
 " gf runs `rustfmt` on the current file
-nmap gf :RustFmt<cr>
+nmap <silent> gf :RustFmt<cr>
 
 " :CargoBuild runs `cargo build`
 command! -buffer CargoBuild exe ':!cargo build'
