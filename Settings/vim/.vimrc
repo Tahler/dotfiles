@@ -27,6 +27,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 " Surround text with chars (brackets, etc.)
 Plugin 'tpope/vim-surround'
+" Autocomplete braces
+Plugin 'jiangmiao/auto-pairs'
 " Ability to repeat (. command) tpope plugin commands
 Plugin 'tpope/vim-repeat'
 " Many colorschemes
