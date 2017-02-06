@@ -244,6 +244,9 @@ endfunction
       \ | setlocal buftype=nofile bufhidden=hide noswapfile
       \ | r !<args>
 
+" Auto close the preview pane in autocomplete
+autocmd CompleteDone * pclose
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
