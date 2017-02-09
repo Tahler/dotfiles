@@ -9,6 +9,7 @@
 	cmm = commit -m
 	cma = commit -a
 	cmam = commit -a -m
+	cmA = "!git add -A && git commit"
 	cmAm = "!git add -A && git commit -m"
 	rb = rebase
 	rbi = rebase -i
