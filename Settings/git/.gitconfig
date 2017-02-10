@@ -18,7 +18,8 @@
 	cp = cherry-pick
 	br = branch
 	cl = clone
-	diff = diff --word-diff
+    d = diff
+    dw = diff --word-diff
 	dc = diff --cached
 
 	absorb = "!git merge $1 && git branch -d $1"
