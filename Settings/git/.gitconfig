@@ -22,6 +22,9 @@
     dw = diff --word-diff
 	dc = diff --cached
 
+    cm-wip = commit -m "WIP"
+    cm-tmp = commit -m "TMP"
+
 	absorb = "!git merge $1 && git branch -d $1"
 
 	clean-ignored = clean -Xdf
