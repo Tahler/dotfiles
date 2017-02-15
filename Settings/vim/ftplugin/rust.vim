@@ -6,6 +6,8 @@ let g:racer_experimental_completer = 1
 
 " gf runs `rustfmt` on the current file
 nmap <silent> gf :RustFmt<cr>
+" gF runs `rustfmt` on all files in the project dir
+nmap <silent> gF :!cargo fmt -- --write-mode overwrite
 
 " :CargoBuild runs `cargo build`
 command! -buffer CargoBuild exe ':!cargo build'
