@@ -1,6 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.rulers": [100],
+    "editor.wordWrap": true,
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "window.zoomLevel": 0,
@@ -48,6 +49,5 @@
 
         // Use the new Rust error format (RUST_NEW_ERROR_FORMAT=true). Note: This flag is mutually exclusive with `useJsonErrors`.
         "rust.useNewErrorFormat": false
-    },
-    "editor.wordWrap": true
+    }
 }
