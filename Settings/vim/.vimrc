@@ -35,6 +35,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'flazz/vim-colorschemes'
 " JSON highlighting
 Plugin 'elzr/vim-json'
+" Fish highlighting
+Plugin 'dag/vim-fish'
 " Markdown highlighting
 Plugin 'plasticboy/vim-markdown'
 " Rust highlighting
