@@ -24,7 +24,8 @@ nmap go <Plug>(rust-def-split)
 nmap ge <Plug>(rust-def-vertical)
 " gd opens markdown documentation in horizontal split
 nmap gd <Plug>(rust-doc)
+" gD opens the rust documentation in a browser
+nmap gD :silent exec '!rustup doc'<cr>
 
 " Disable autocompletion of '', enable completion of <>
 let g:AutoPairs = {'(':')', '[':']', '{':'}', '<':'>', '"':'"', '`':'`'}
-
