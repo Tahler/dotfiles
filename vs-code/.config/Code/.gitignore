@@ -1,0 +1,6 @@
+# Don't track metadata
+*
+# Only the User directory
+!User/
+!.gitignore
+
