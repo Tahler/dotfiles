@@ -51,6 +51,7 @@ Plugin 'racer-rust/vim-racer'
 " Filetype auto-detection
 filetype plugin indent on
 
+set shell=/bin/bash
 set encoding=utf8
 set tabstop=4
 set shiftwidth=4
