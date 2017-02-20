@@ -178,8 +178,13 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" New splits
 nmap <C-w><C-e> :vsplit<cr>
 nmap <C-w><C-o> :split<cr>
+
+" Rearrange splits
+nmap <C-w><C-v> <C-w><C-t><C-w>H
+nmap <C-w><C-h> <C-w><C-t><C-w>K
 
 " Move up and down in autocomplete with <c-j> and <c-k>
 inoremap <expr> <c-j> ("\<C-n>")
