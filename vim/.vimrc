@@ -38,7 +38,7 @@ Plugin 'elzr/vim-json'
 " Fish highlighting
 Plugin 'dag/vim-fish'
 " Markdown highlighting
-Plugin 'plasticboy/vim-markdown'
+Plugin 'tpope/vim-markdown'
 " Rust highlighting
 Plugin 'rust-lang/rust.vim'
 " Rust intellisense
