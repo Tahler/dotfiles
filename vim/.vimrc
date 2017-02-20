@@ -213,15 +213,26 @@ nnoremap <C-_> :Commentary<cr>
 vnoremap <C-_> :Commentary<cr>
 
 " Faster visual surround
-vmap ( S)
-vmap ) S(
-vmap [ S]
-vmap ] S[
-vmap { S}
-vmap } S{
-vmap " S"
-vmap ' S'
-vmap ` S`
+vmap s( S)
+vmap s) S(
+vmap s[ S]
+vmap s] S[
+vmap s{ S}
+vmap s} S{
+vmap s" S"
+vmap s' S'
+vmap s` S`
+
+" Use sx to wrap the word under the cursor with x
+nmap s( viws(
+nmap s) viws)
+nmap s[ viws[
+nmap s] viws]
+nmap s{ viws{
+nmap s} viws}
+nmap s" viws"
+nmap s' viws'
+nmap s` viws`
 
 " Let Simpylfold show the Python docstrings
 let g:SimpylFold_docstring_preview=1
