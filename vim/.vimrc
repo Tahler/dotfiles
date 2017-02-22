@@ -13,14 +13,8 @@ call vundle#rc()
 
 " Let vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
-" Python code folding
-Plugin 'tmhedberg/SimpylFold'
-" Fuzzy finder
-Plugin 'ctrlpvim/ctrlp.vim'
-" Better '%' matching
-Plugin 'tmhedberg/matchit'
-" Text alignment
-Plugin 'godlygeek/tabular'
+" Ability to repeat (.) tpope plugin commands
+Plugin 'tpope/vim-repeat'
 " Git wrapping
 Plugin 'tpope/vim-fugitive'
 " Support for easily toggling comments
@@ -29,16 +23,18 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 " Autocomplete braces
 Plugin 'jiangmiao/auto-pairs'
-" Ability to repeat (. command) tpope plugin commands
-Plugin 'tpope/vim-repeat'
-" Many colorschemes
-Plugin 'flazz/vim-colorschemes'
+" Fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'
+" Better '%' matching
+Plugin 'tmhedberg/matchit'
+" Text alignment commands
+Plugin 'godlygeek/tabular'
+" Markdown highlighting
+Plugin 'plasticboy/vim-markdown'
 " JSON highlighting
 Plugin 'elzr/vim-json'
 " Fish highlighting
 Plugin 'dag/vim-fish'
-" Markdown highlighting
-Plugin 'tpope/vim-markdown'
 " Rust highlighting
 Plugin 'rust-lang/rust.vim'
 " Rust intellisense
