@@ -23,6 +23,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 " Autocomplete braces
 Plugin 'jiangmiao/auto-pairs'
+" Snippet engine
+Plugin 'SirVer/ultisnips'
 " Fuzzy file finder
 Plugin 'ctrlpvim/ctrlp.vim'
 " Better '%' matching
@@ -241,6 +243,10 @@ let g:ctrlp_map = '<c-e>'
 
 " Let ctrl-p have up to 30 results.
 let g:ctrlp_max_height = 30
+
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
 
 " Delete trailing whitespace on save
 func! DeleteTrailingWhitespace()
