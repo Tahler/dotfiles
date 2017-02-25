@@ -99,6 +99,9 @@ try
 catch
 endtry
 
+" Use the unnamedplus ("*) register; might be specific to Arch
+set clipboard=unnamedplus
+
 " case insensitive search
 set ignorecase
 " If there are uppercase letters, become case-sensitive.
