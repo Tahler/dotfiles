@@ -1,7 +1,3 @@
-###########################################################################
-#                            TextMate Snippets                            #
-###########################################################################
-
 priority -50
 
 snippet def "#define ..."
@@ -11,22 +7,13 @@ endsnippet
 snippet #ifndef "#ifndef ... #define ... #endif"
 #ifndef ${1/([A-Za-z0-9_]+).*/$1/}
 #define ${1:SYMBOL} ${2:value}
-#endif /* ifndef $1 */
+#endif /* $1 */
 endsnippet
 
 snippet #if "#if #endif" b
 #if ${1:0}
 ${VISUAL}$0
 #endif
-endsnippet
-
-snippet mark "#pragma mark (mark)"
-#if 0
-${1:#pragma mark -
-}#pragma mark $2
-#endif
-
-$0
 endsnippet
 
 snippet main "main() (main)"
@@ -38,18 +25,12 @@ int main(int argc, char *argv[])
 endsnippet
 
 snippet for "for loop (for)"
-for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${VISUAL}$0
-}
-endsnippet
-
-snippet fori "for int loop (fori)"
 for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${VISUAL}$0
 }
 endsnippet
 
-snippet once "Include header once only guard"
+snippet once "header guard (once)"
 #ifndef ${1:`!p
 if not snip.c:
 	import random, string
@@ -62,24 +43,18 @@ else:
 
 ${VISUAL}$0
 
-#endif /* end of include guard: $1 */
+#endif /* $1 */
 endsnippet
 
-snippet fprintf "fprintf ..."
+snippet fprintf "fprintf ... (fprintf)"
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
-snippet eli "else if .. (eli)"
-else if (${1:/* condition */}) {
-	${VISUAL}$0
-}
-endsnippet
-
-snippet printf "printf .. (printf)"
+snippet printf "printf ... (printf)"
 printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
-snippet st "struct"
+snippet st "struct" b
 struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 	${0:/* data */}
 };
@@ -92,8 +67,6 @@ ${1:void} ${2:function_name}($3)
 }
 endsnippet
 
-snippet fund "function declaration" b
+snippet funp "function prototype / forward declaration" b
 ${1:void} ${2:function_name}($3);
 endsnippet
-
-# vim:ft=snippets:
