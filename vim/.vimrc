@@ -236,9 +236,6 @@ nmap s" viws"
 nmap s' viws'
 nmap s` viws`
 
-" Let Simpylfold show the Python docstrings
-let g:SimpylFold_docstring_preview=1
-
 " Remap ctrl-p to ctrl-e
 let g:ctrlp_map = '<c-e>'
 
