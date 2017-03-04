@@ -69,3 +69,21 @@ endsnippet
 snippet funp "function prototype / forward declaration" b
 ${1:void} ${2:function_name}($3);
 endsnippet
+
+snippet /* "block comment"
+/*$1*/
+endsnippet
+
+snippet /** "docstring" bA
+/*
+ * $1
+ */
+endsnippet
+
+snippet d "debug"
+DEBUG("${2:%s}", $1);
+endsnippet
+
+snippet dv "debug value" b
+DEBUG_VAL("%${2:s}", ${1:value});
+endsnippet
