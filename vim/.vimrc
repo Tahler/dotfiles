@@ -15,6 +15,8 @@ call vundle#rc()
 Plugin 'VundleVim/Vundle.vim'
 " Ability to repeat (.) tpope plugin commands
 Plugin 'tpope/vim-repeat'
+" Asynchronous job running
+Plugin 'tpope/vim-dispatch'
 " Git wrapping
 Plugin 'tpope/vim-fugitive'
 " Support for easily toggling comments
@@ -285,4 +287,3 @@ match ErrorMsg '\s\+$'
 colorscheme custom-material
 " No background color
 hi Normal ctermbg=none
-
