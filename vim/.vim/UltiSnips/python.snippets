@@ -1,13 +1,7 @@
 priority -50
 
-###########################################################################
-#                            TEXTMATE SNIPPETS                            #
-###########################################################################
-
-#! header
 snippet #! "Shebang header for python scripts" b
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 $0
 endsnippet
 
@@ -256,8 +250,7 @@ endglobal
 
 snippet class "class with docstrings" b
 class ${1:MyClass}(${2:object}):
-
-	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
+	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1.}`!p snip.rv = triple_quotes(snip)`
 
 	def __init__(self$4):
 		`!p snip.rv = triple_quotes(snip)`${5:TODO: to be defined1.}`!p
@@ -708,5 +701,3 @@ snippet pmdoc "pocoo style module doc string" b
 """
 $0
 endsnippet
-
-# vim:ft=snippets:
