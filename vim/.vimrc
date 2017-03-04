@@ -147,6 +147,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 " CtrlP should ignore the same files that Git does
 let g:ctrlp_user_command =
       \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ultisnips_python_style = 'google'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mappings and Macros
