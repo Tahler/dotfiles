@@ -3,6 +3,10 @@
 	email = tyler@berryac.com
 [push]
 	default = simple
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
 [alias]
 	st = status -s
 	cm = commit
@@ -21,6 +25,7 @@
     d = diff
     dw = diff --word-diff
 	dc = diff --cached
+    dt = difftool
 
     cm-wip = commit -m "WIP"
     cm-tmp = commit -m "TMP"
