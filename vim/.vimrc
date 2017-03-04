@@ -1,8 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle and Plugin Setup
+" Vundle and plugin setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" For this to work, install vundle manually
+" Vundle must be installed manually
 " https://github.com/gmarik/vundle
 
 set nocompatible
@@ -45,57 +45,82 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General Settings
+" General defaults
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Filetype auto-detection
 filetype plugin indent on
 
-set shell=/bin/bash
+" UTF-8 encoding
 set encoding=utf8
+" Tab width 4 characters
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
-" use spaces instead of tabs.
+" Use spaces over tabs
 set expandtab
-" lets tab key insert 'tab stops' and bksp deletes tabs
+" Tab key moves to the next indent
 set smarttab
-" tab / shifting moves to closest tabstop.
+" Tab / shifting moves to closest tabstop
 set shiftround
-" Match indents on new lines.
+" Match indents on new lines
 set autoindent
-" Intellegently dedent / indent new lines based on rules.
+" Intelligently indent / dedent new lines based on rules
 set smartindent
-" Show line numbers
+" 'Hybrid' number view
 set number
-" Show relative line number, which shows a 'hybrid' number view
 set relativenumber
 " Show filename
 set laststatus=2
 " Always show current position
 set ruler
-" Buffer 5 lines to the cursor vertically
+" Buffer 5 lines above and below the cursor
 set so=5
 " Wrap lines to the window buffer
 set wrap
 " Show column line at 80
 set colorcolumn=80
-
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
+" 'h' and 'l' move across lines
 set whichwrap+=<,>,h,l
-
 " VCS makes backups and .swp files obsolete - disable them
 set nobackup
 set nowritebackup
 set noswapfile
-
-""" No nagging when hiding buffers
-" allow buffers with unsaved changes
+" Allow buffers with unsaved changes
 set hidden
-" when a file has changed on disk load it without asking
+" When a file has changed on disk load it without asking
 set autoread
-
+" Use the unnamedplus ("+) register; specific to Arch Linux
+set clipboard=unnamedplus
+" Case insensitive search unless there are uppercase letters
+set ignorecase
+set smartcase
+" Live incremental searching
+set incsearch
+" Live match highlighting
+set showmatch
+" Highlight matches
+set hlsearch
+" Use the `g` flag in regex substitutes
+set gdefault
+" Regular expressions in search
+set magic
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+" Allow the cursor to go anywhere in visual block mode.
+set virtualedit+=block
+" No sound on errors
+set noerrorbells
+set novisualbell
+set tm=500
+" Keep folds open on load
+set foldlevelstart=20
+" Turn on the wild menu
+set wildmenu
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 " Persistent undo: undo even after closing a buffer or vim
 try
   set undodir=~/.vim/tmp/undo
@@ -103,151 +128,31 @@ try
 catch
 endtry
 
-" Use the unnamedplus ("*) register; might be specific to Arch
-set clipboard=unnamedplus
-
-" case insensitive search
-set ignorecase
-" If there are uppercase letters, become case-sensitive.
-set smartcase
-" live incremental searching
-set incsearch
-" live match highlighting
-set showmatch
-" highlight matches
-set hlsearch
-" use the `g` flag by default.
-set gdefault
-" Regular expressions in search
-set magic
-
-" Don't redraw while executing macros (good performance config)
-set lazyredraw
-
-" Allow the cursor to go anywhere in visual block mode.
-set virtualedit+=block
-
-" No sound on errors
-set noerrorbells
-set novisualbell
-set tm=500
-
-" Return to last edit position when opening files
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
-      \ | exe "normal! g'\"" | endif
-
-" Keep folds open on load
-set foldlevelstart=20
-
-" Turn on the wild menu
-set wildmenu
-" Ignore compiled files
-set wildignore=*.o,*~,*.pyc
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-" CtrlP should ignore the same files that Git does
-let g:ctrlp_user_command =
-      \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ultisnips_python_style = 'google'
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key Mappings and Macros
+" Plugin settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" leader is a key that allows you to have your own 'namespace' of keybindings
-" Referenced below as <leader>
-let mapleader = ","
-let g:mapleader = ","
-
-" Get to command mode via ';'
-nnoremap ; :
-vnoremap ; :
-
-" Remap 0 to first non-blank char
-nnoremap 0 ^
-
-" Ctrl-d closes current buffer
-nmap <C-d> :bd<cr>
-
-" Clear match highlighting
-noremap <silent> <leader><space>
-      \ :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
-
-" :W sudo saves the file
-" (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
-
-" Faster movement between windows
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" New splits
-nmap <C-w><C-e> :vsplit<cr>
-nmap <C-w><C-o> :split<cr>
-
-" Rearrange splits
-nmap <C-w><C-v> <C-w><C-t><C-w>H
-nmap <C-w><C-h> <C-w><C-t><C-w>K
-
-" Move up and down in autocomplete with <c-j> and <c-k>
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
-
-" Quick buffer switching - like cmd-tab'ing
-nnoremap <leader><leader> <c-^>
-
-" Move down on wrapped lines
-noremap j gj
-noremap k gk
-
-" 'Visual select' current word
-nmap <leader>v viw
-" 'Visual select' current line
-nmap <leader>V 0v$h
-
-" Fold with spacebar
-nnoremap <space> za
-vnoremap <space> zf
-
-""" Plugin remappings
-
-" Map '/' to toggle comments with vim-commentary
-nnoremap <C-_> :Commentary<cr>
-vnoremap <C-_> :Commentary<cr>
-
-" Faster visual surround
-vmap s( S)
-vmap s) S(
-vmap s[ S]
-vmap s] S[
-vmap s{ S}
-vmap s} S{
-vmap s" S"
-vmap s' S'
-vmap s` S`
-
-" Use sx to wrap the word under the cursor with x
-nmap s( viws(
-nmap s) viws)
-nmap s[ viws[
-nmap s] viws]
-nmap s{ viws{
-nmap s} viws}
-nmap s" viws"
-nmap s' viws'
-nmap s` viws`
 
 " Remap ctrl-p to ctrl-e
 let g:ctrlp_map = '<c-e>'
-
 " Let ctrl-p have up to 30 results.
 let g:ctrlp_max_height = 30
-
+" CtrlP should ignore the same files that Git does
+let g:ctrlp_user_command =
+      \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
+" UltiSnips next and prev positions through tab / shift-tab
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
+" Python snippets should use Google style docstrings
+let g:ultisnips_python_style = 'google'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Functions and autocmd
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Return to last edit position when opening files
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$")
+      \ | exe "normal! g'\"" | endif
 " Delete trailing whitespace on save
 func! DeleteTrailingWhitespace()
   exe "normal mz"
@@ -255,7 +160,6 @@ func! DeleteTrailingWhitespace()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.* :call DeleteTrailingWhitespace()
-
 " Auto paste mode
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
@@ -265,25 +169,61 @@ function! XTermPasteBegin()
   set paste
   return ""
 endfunction
-
-" Helper cmd named 'R' to run a command with output in a new scratch buffer
-:command! -nargs=* -complete=shellcmd R new
-      \ | setlocal buftype=nofile bufhidden=hide noswapfile
-      \ | r !<args>
-
 " Auto close the preview pane in autocomplete
 autocmd CompleteDone * pclose
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colors and Highlighting
+" Key mappings and macros
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" <leader> key is ','
+let mapleader = ","
+let g:mapleader = ","
+
+" Get to command mode faster via ';'
+noremap ; :
+" Remap 0 to first non-blank char
+nnoremap 0 ^
+" Ctrl-d closes current buffer
+nnoremap <C-d> :bd<cr>
+" Clear match highlighting
+nnoremap <silent> <leader><space> :noh<cr>
+" New splits
+nnoremap <C-w><C-e> :vsplit<cr>
+nnoremap <C-w><C-o> :split<cr>
+" Faster movement between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Faster rearrangement of splits
+nnoremap <C-w><C-v> <C-w><C-t><C-w>H
+nnoremap <C-w><C-h> <C-w><C-t><C-w>K
+" Move up and down in autocomplete with <c-j> and <c-k>
+inoremap <expr> <C-j> ("\<C-n>")
+inoremap <expr> <C-k> ("\<C-p>")
+" Quick buffer switching - like cmd-tab'ing
+nnoremap <leader><leader> <c-^>
+" Move down on wrapped lines
+noremap j gj
+noremap k gk
+" Fold with spacebar
+nnoremap <space> za
+vnoremap <space> zf
+" Map '/' to toggle comments with vim-commentary
+nnoremap <C-_> :Commentary<cr>
+vnoremap <C-_> :Commentary<cr>
+" :W sudo saves the file (useful for handling permission denied errors)
+command W w !sudo tee % > /dev/null
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors and highlighting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntax highlighting
 syntax on
-
 " Highlight trailing whitespace
 match ErrorMsg '\s\+$'
-
 " Found in ~/.vim/colors
 colorscheme custom-material
 " No background color
