@@ -1,7 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "editor.rulers": [100],
-    "editor.wordWrap": true,
+    "editor.rulers": [80],
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "window.zoomLevel": 0,
@@ -13,40 +12,28 @@
         "editor.rulers": [100],
         // Specifies path to Racer binary if it's not in PATH
         "rust.racerPath": null,
-
         // Specifies path to Rustfmt binary if it's not in PATH
         "rust.rustfmtPath": null,
-
         // Specifies path to Rustsym binary if it's not in PATH
         "rust.rustsymPath": null,
-
         // Specifies path to /src directory of local copy of Rust sources
         "rust.rustLangSrcPath": null,
-
         // Specifies path to Cargo binary if it's not in PATH
         "rust.cargoPath": null,
-
         // Specifies path to home directory of Cargo. Mostly needed for working with custom installations of Rust via rustup or multirust.
         "rust.cargoHomePath": null,
-
         // Specifies custom variables to set when running cargo. Useful for crates which use env vars in their build.rs (like openssl-sys).
         "rust.cargoEnv": null,
-
         // Turn on/off autoformatting file on save
         "rust.formatOnSave": false,
-
         // Turn on/off autochecking file on save using cargo check
         "rust.checkOnSave": false,
-
         // Choose between check, check-lib, clippy, build and test to lint
         "rust.checkWith": "check",
-
         // List of feature flags passed to cargo
         "rust.features": [],
-
         // Enable the use of JSON errors (requires Rust 1.7+). Note: This is an unstable feature of Rust and is still in the process of being stablised
         "rust.useJsonErrors": false,
-
         // Use the new Rust error format (RUST_NEW_ERROR_FORMAT=true). Note: This flag is mutually exclusive with `useJsonErrors`.
         "rust.useNewErrorFormat": false
     }
