@@ -21,7 +21,6 @@
 	cob = checkout -b
 	cp = cherry-pick
 	br = branch
-	cl = clone
     d = diff
     dw = diff --word-diff
 	dc = diff --cached
