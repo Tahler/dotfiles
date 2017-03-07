@@ -76,6 +76,20 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# Bugs concerning clearing the prompt when LANG=C
+LANG=en_US.utf8
+LC_CTYPE=en_US.utf8
+LC_NUMERIC=en_US.utf8
+LC_TIME=en_US.utf8
+LC_COLLATE=en_US.utf8
+LC_MONETARY=en_US.utf8
+LC_MESSAGES=en_US.utf8
+LC_PAPER=en_US.utf8
+LC_NAME=en_US.utf8
+LC_ADDRESS=en_US.utf8
+LC_TELEPHONE=en_US.utf8
+LC_MEASUREMENT=en_US.utf8
+LC_IDENTIFICATION=en_US.utf8
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
