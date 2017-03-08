@@ -70,6 +70,9 @@ source $ZSH/oh-my-zsh.sh
 
 export SSH_KEY_PATH=$HOME/.ssh/rsa_id
 
+# Bug concerning beginning '%'
+unsetopt PROMPT_SP
+
 # Bugs concerning clearing the prompt when LANG is not utf-8
 LANG=en_US.utf8
 LC_CTYPE=en_US.utf8
