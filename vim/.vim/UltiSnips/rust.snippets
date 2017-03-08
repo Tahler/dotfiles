@@ -103,4 +103,20 @@ impl ${1:Type/Trait}${2: for ${3:Type}} {
 }
 endsnippet
 
+snippet test "Test function" b
+#[test]
+fn ${1:name}() {
+	${2:unimplemented!();}
+}
+endsnippet
+
+snippet tests "Test module" b
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	$1
+}
+endsnippet
+
 # vim:ft=snippets:
