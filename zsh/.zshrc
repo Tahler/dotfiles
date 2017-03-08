@@ -1,5 +1,6 @@
 export GOPATH=$HOME/go
-export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$PATH
+export CARGO_PATH=$HOME/.cargo/bin
+export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$CARGO_PATH:$PATH
 
 export EDITOR=vim
 export TERM=xterm-termite
