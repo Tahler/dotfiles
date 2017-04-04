@@ -189,8 +189,8 @@ nnoremap <C-d> :bd<cr>
 " Clear match highlighting
 nnoremap <silent> <leader><space> :noh<cr>
 " New splits
-nnoremap <C-w><C-e> :vsplit<cr>
-nnoremap <C-w><C-o> :split<cr>
+nnoremap <C-w>\ :vsplit<cr>
+nnoremap <C-w>- :split<cr>
 " Faster movement between splits
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
