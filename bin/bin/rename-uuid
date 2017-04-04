@@ -1,0 +1,92 @@
+#!/usr/bin/env python
+
+import argparse
+import os
+import uuid
+
+DEFAULT_PARENT_DIR = '.'
+UUID_HEX_LEN = 32
+
+class RenameTask(object):
+    def __init__(self, current_name, new_name):
+        self.current_name = current_name
+        self.new_name = new_name
+
+    def __str__(self):
+        return '{} => {}'.format(self.current_name, self.new_name)
+
+    def __repr__(self):
+        return self.__str__()
+
+
+def get_renames(parent_dir, name_len):
+    """Renames all files in the directory in the parent_dir with UUIDv4s hex
+    values trimmed to name_len."""
+
+    renames = []
+
+    files = os.listdir(parent_dir)
+    for f in files:
+        new_root = uuid.uuid4().hex[:name_len]
+        curr_root, ext = os.path.splitext(f)
+        new_name = new_root + ext
+        renames.append(RenameTask(f, new_name))
+
+    return renames
+
+
+def confirm(prompt, default_confirm=None):
+    """default_confirm can be True, False, or None"""
+
+    if default_confirm is None:
+        options = '[y/n]'
+    elif default_confirm:
+        options = '[Y/n]'
+    else:
+        options = '[y/N]'
+
+    answer = None
+    while answer is None:
+        full_prompt = '{} {} '.format(prompt, options)
+        choice = input(full_prompt).lower().strip()
+        if default_confirm is not None and choice == '':
+            answer = default_confirm
+        elif choice == 'y':
+            answer = True
+        else:
+            answer = False
+
+    return answer
+
+
+def confirm_file_renames(renames):
+    for rename in renames:
+        print(rename)
+    print()
+    return confirm('Proceed with the changes?', False)
+
+
+def rename_files(parent_dir = DEFAULT_PARENT_DIR, name_len = UUID_HEX_LEN):
+    renames = get_renames(parent_dir, name_len)
+    if confirm_file_renames(renames):
+        for rename in renames:
+            os.rename(rename.current_name, rename.new_name)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+            description='Rename files in a directory with truncated UUIDs.')
+    parser.add_argument(
+            'parent_dir',
+            default=DEFAULT_PARENT_DIR,
+            nargs='?',
+            type=str,
+            help='the directory containing the files to be renamed')
+    parser.add_argument(
+            '-l', '--name_len',
+            default=UUID_HEX_LEN,
+            nargs='?',
+            type=int,
+            help='the length of the truncated UUID which becomes the filename (must be less than 32)')
+    args = parser.parse_args()
+    rename_files(args.parent_dir, args.name_len)
