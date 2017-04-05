@@ -145,6 +145,8 @@ let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
 " Python snippets should use Google style docstrings
 let g:ultisnips_python_style = 'google'
+let g:ultisnips_python_quoting_style = 'single'
+let g:ultisnips_python_triple_quoting_style = 'double'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Functions and autocmd
