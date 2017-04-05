@@ -19,7 +19,7 @@ class RenameTask(object):
         return self.__str__()
 
 
-def get_renames(parent_dir, name_len):
+def get_renames(parent_dir, name_len, rename_dirs=False):
     """Renames all files in the directory in the parent_dir with UUIDv4s hex
     values trimmed to name_len."""
 
@@ -27,10 +27,11 @@ def get_renames(parent_dir, name_len):
 
     files = os.listdir(parent_dir)
     for f in files:
-        new_root = uuid.uuid4().hex[:name_len]
-        curr_root, ext = os.path.splitext(f)
-        new_name = new_root + ext
-        renames.append(RenameTask(f, new_name))
+        if rename_dirs or os.path.isfile(f):
+            new_root = uuid.uuid4().hex[:name_len]
+            curr_root, ext = os.path.splitext(f)
+            new_name = new_root + ext
+            renames.append(RenameTask(f, new_name))
 
     return renames
 
@@ -66,8 +67,11 @@ def confirm_file_renames(renames):
     return confirm('Proceed with the changes?', False)
 
 
-def rename_files(parent_dir = DEFAULT_PARENT_DIR, name_len = UUID_HEX_LEN):
-    renames = get_renames(parent_dir, name_len)
+def rename_files(
+        parent_dir = DEFAULT_PARENT_DIR, 
+        name_len = UUID_HEX_LEN, 
+        rename_dirs=False):
+    renames = get_renames(parent_dir, name_len, rename_dirs)
     if confirm_file_renames(renames):
         for rename in renames:
             os.rename(rename.current_name, rename.new_name)
@@ -88,5 +92,9 @@ if __name__ == "__main__":
             nargs='?',
             type=int,
             help='the length of the truncated UUID which becomes the filename (must be less than 32)')
+    parser.add_argument(
+            '-d', '--include_dirs',
+            action='store_true',
+            help='if present, also rename directories')
     args = parser.parse_args()
-    rename_files(args.parent_dir, args.name_len)
+    rename_files(args.parent_dir, args.name_len, args.include_dirs)
