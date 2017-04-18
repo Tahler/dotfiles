@@ -3,7 +3,7 @@ export CARGO_PATH=$HOME/.cargo/bin
 export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$CARGO_PATH:$PATH
 
 export EDITOR=vim
-export TERM=xterm-termite
+export TERM=xterm-256color
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
