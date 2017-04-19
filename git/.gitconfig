@@ -20,7 +20,8 @@
 	co = checkout
 	cob = checkout -b
 	cp = cherry-pick
-	br = branch
+	b = branch
+	bd = branch -d
     d = diff
     dw = diff --word-diff
 	dc = diff --cached
