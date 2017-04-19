@@ -6,38 +6,28 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+p",
+        "key": "ctrl+shift+space",
         "command": "editor.action.triggerParameterHints",
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+down",
-        "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus"
+        "key": "ctrl+j",
+        "command": "extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.use<C-n> && !inDebugRepl"
     },
     {
-        "key": "ctrl+shift+up",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus"
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.use<C-n> && !inDebugRepl"
     },
     {
-        "key": "alt+`",
-        "command": "workbench.action.toggleSidebarVisibility"
+        "key": "ctrl+k",
+        "command": "extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible && vim.use<C-p>"
     },
     {
-        "key": "alt+1",
-        "command": "workbench.view.explorer"
-    },
-    {
-        "key": "alt+2",
-        "command": "workbench.view.search"
-    },
-    {
-        "key": "alt+3",
-        "command": "workbench.view.git"
-    },
-    {
-        "key": "alt+4",
-        "command": "workbench.view.debug"
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible && vim.use<C-p>"
     }
 ]
