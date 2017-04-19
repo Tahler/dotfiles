@@ -2,9 +2,15 @@
 {
     "editor.rulers": [80],
     "editor.wordWrap": "on",
+    "editor.lineNumbers": "relative",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-    "window.zoomLevel": 0,
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": [";"],
+            "after": [":"]
+        }
+    ],
     "[markdown]": {
         "editor.rulers": [80],
         "files.trimTrailingWhitespace": false
