@@ -1,10 +1,10 @@
-// Place your settings in this file to overwrite the default settings
 {
     "editor.rulers": [80],
     "editor.wordWrap": "on",
     "editor.lineNumbers": "relative",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": [";"],
