@@ -1,4 +1,3 @@
-// Place your key bindings in this file to overwrite the defaults
 [
     {
         "key": "ctrl+d",
@@ -39,5 +38,35 @@
         "key": "ctrl+`",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.use<C-f> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "editor.action.clipboardCutAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+v",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "d p",
+        "command": "git.stageSelectedRanges",
+        "when": "textCompareEditorVisible && editorHasSelection"
+    },
+    {
+        "key": "d o",
+        "command": "git.unstage",
+        "when": "textCompareEditorVisible && editorHasSelection"
     }
 ]
