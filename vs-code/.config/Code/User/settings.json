@@ -11,6 +11,7 @@
             "after": [":"]
         }
     ],
+    "vim.smartcase": true,
     "[markdown]": {
         "editor.rulers": [80],
         "files.trimTrailingWhitespace": false
