@@ -5,6 +5,12 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "vim.handleKeys": {
+        "<C-b>": false,
+        "<C-d>": false,
+        "<C-f>": false,
+        "<C-w>": false
+    },
     "vim.otherModesKeyBindingsNonRecursive": [
         {
             "before": [";"],
@@ -44,5 +50,6 @@
         "rust.useJsonErrors": false,
         // Use the new Rust error format (RUST_NEW_ERROR_FORMAT=true). Note: This flag is mutually exclusive with `useJsonErrors`.
         "rust.useNewErrorFormat": false
-    }
+    },
+    "window.zoomLevel": 0
 }

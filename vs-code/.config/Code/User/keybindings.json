@@ -1,10 +1,5 @@
 [
     {
-        "key": "ctrl+d",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+shift+space",
         "command": "editor.action.triggerParameterHints",
         "when": "editorTextFocus"
@@ -40,9 +35,9 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+f",
-        "command": "-extension.vim_ctrl+f",
-        "when": "editorTextFocus && vim.use<C-f> && !inDebugRepl"
+        "key": "ctrl+shift+x",
+        "command": "editor.action.clipboardCutAction",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+shift+c",
@@ -50,23 +45,8 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+x",
-        "command": "editor.action.clipboardCutAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
         "key": "ctrl+shift+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "d p",
-        "command": "git.stageSelectedRanges",
-        "when": "textCompareEditorVisible && editorHasSelection"
-    },
-    {
-        "key": "d o",
-        "command": "git.unstage",
-        "when": "textCompareEditorVisible && editorHasSelection"
     }
 ]
