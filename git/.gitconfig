@@ -16,6 +16,7 @@
 	cmA = "!git add -A && git commit"
 	cmAm = "!git add -A && git commit -m"
 	rb = rebase
+	rbc = rebase --continue
 	rbi = rebase -i
 	co = checkout
 	cob = checkout -b
