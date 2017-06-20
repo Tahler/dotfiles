@@ -1,10 +1,169 @@
 {
-	"Print to console": {
-		"prefix": "log",
+	// React
+	"react-component": {
+		"prefix": "rc",
 		"body": [
-			"console.log($1);",
-			"$2"
-		],
-		"description": "Log output to console"
+			"import React, { ${5:Pure}Component } from 'react';",
+			"import PropTypes from 'prop-types';",
+			"",
+			"export class $1 extends ${5:Pure}Component {",
+			"  static propTypes = {",
+			"    $2",
+			"  }",
+			"",
+			"  render() {",
+			"    const {",
+			"      $3",
+			"    } = this.props;",
+			"",
+			"    return (",
+			"      $4",
+			"    );",
+			"  }",
+			"}",
+			""
+		]
+	},
+	"static-prop-types": {
+		"prefix": "spt",
+		"body": [
+			"static propTypes = {",
+			"\t$1",
+			"}"
+		]
+	},
+	"static-default-props": {
+		"prefix": "sdp",
+		"body": [
+			"static defaultProps = {",
+			"\t$1",
+			"}"
+		]
+	},
+	// Redux
+	"action-type": {
+		"prefix": "atype",
+		"body": [
+			"const $1 = '$1';"
+		]
+	},
+	"action-creator": {
+		"prefix": "action",
+		"body": [
+			"const $1 = ($3) => ({",
+			"\ttype: $2,$4",
+			"});"
+		]
+	},
+	"saga": {
+		"prefix": "saga",
+		"body": [
+			"function* $1() {",
+			"\ttry {",
+			"\t\tconst $3 = yield call($2);",
+			"\t\tyield put($1Success($3));",
+			"\t} catch (err) {",
+			"\t\tyield put($1Failure(err));",
+			"\t}",
+			"}",
+			"",
+			"export function* watch$1Request() {",
+			"\tyield ${4:takeEvery}($5, $1);",
+			"}"
+		]
+	},
+	"async-redux": {
+		"prefix": "async-redux",
+		"body": [
+			"const $1_REQUEST = '$1_REQUEST';",
+			"const $2Request = ($3) => ({",
+			"\ttype: $1_REQUEST,$4",
+			"});",
+			"",
+			"const $1_SUCCESS = '$1_SUCCESS';",
+			"const $2Success = ($5) => ({",
+			"\ttype: $1_SUCCESS,$6",
+			"});",
+			"",
+			"const $1_FAILURE = '$1_FAILURE';",
+			"const $2Failure = (err) => ({",
+			"\ttype: $1_FAILURE,",
+			"\terr,",
+			"});",
+			"",
+			"function* $2(action) {",
+			"\ttry {",
+			"\t\t${9:const $8 = }yield call($7);",
+			"\t\tyield put($2Success($8));",
+			"\t} catch (err) {",
+			"\t\tyield put($2Failure(err));",
+			"\t}",
+			"}",
+			"",
+			"export function* watch$10$2Request() {",
+			"\tyield takeEvery($1_REQUEST, $2);",
+			"}",
+			""
+		]
+	},
+	"async-redux-file": {
+		"prefix": "async-redux-file",
+		"body": [
+			"import { call, put, takeEvery } from 'redux-saga/effects';",
+			"$1",
+			"",
+			"const $2_REQUEST = '$2_REQUEST';",
+			"export const $3Request = ($4) => ({",
+			"\ttype: $2_REQUEST,$5",
+			"});",
+			"",
+			"const $2_SUCCESS = '$2_SUCCESS';",
+			"const $3Success = ($6) => ({",
+			"\ttype: $2_SUCCESS,$7",
+			"});",
+			"",
+			"const $2_FAILURE = '$2_FAILURE';",
+			"const $3Failure = (err) => ({",
+			"\ttype: $2_FAILURE,",
+			"\terr,",
+			"});",
+			"",
+			"function* $3(action) {",
+			"\ttry {",
+			"\t\t${10:const $9 = }yield call($8);",
+			"\t\tyield put($3Success($9));",
+			"\t} catch (err) {",
+			"\t\tyield put($3Failure(err));",
+			"\t}",
+			"}",
+			"",
+			"export function* watch$11$3Request() {",
+			"\tyield takeEvery($2_REQUEST, $3);",
+			"}",
+			"",
+			"export default function reducer(state = {}, action) {",
+			"\tswitch (action.type) {",
+			"\t\tcase $2_SUCCESS:",
+			"\t\t\treturn { ...state, $13 };",
+			"\t\tcase $2_FAILURE:",
+			"\t\t\treturn { ...state, err: action.err };",
+			"\t\tdefault:",
+			"\t\t\treturn state;",
+			"\t}",
+			"}"
+		]
+	},
+	"reducer": {
+		"prefix": "reducer",
+		"body": [
+			"export default function reducer(state = {}, action) {",
+			"\tswitch (action.type) {",
+			"\t\tcase $1:",
+			"\t\t\treturn { ...state, $2 };",
+			"\t\tdefault:",
+			"\t\t\treturn state;",
+			"\t}",
+			"}"
+		]
 	}
 }
