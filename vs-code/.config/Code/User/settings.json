@@ -21,6 +21,11 @@
     "[markdown]": {
         "editor.rulers": [80]
     },
+    "[javascript]": {
+        "editor.rulers": [100],
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
     "[rust]": {
         "editor.rulers": [100],
         // Specifies path to Racer binary if it's not in PATH
@@ -50,5 +55,7 @@
         // Use the new Rust error format (RUST_NEW_ERROR_FORMAT=true). Note: This flag is mutually exclusive with `useJsonErrors`.
         "rust.useNewErrorFormat": false
     },
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "git.enableSmartCommit": true
 }
