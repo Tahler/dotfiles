@@ -1,24 +1,34 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle and plugin setup
+"        _
+"       (_)
+" __   ___ _ __ ___  _ __ ___
+" \ \ / / | '_ ` _ \| '__/ __|
+"  \ V /| | | | | | | | | (__
+" (_)_/ |_|_| |_| |_|_|  \___|
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tyler Berry's Vim configuration
+" tyler@berryac.com
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vundle must be installed manually
-" https://github.com/gmarik/vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin setup                                                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible
 filetype off
+
+""""""""""""""""""
+" Vundle plugins "
+""""""""""""""""""
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Let vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
-" Ability to repeat (.) tpope plugin commands
-Plugin 'tpope/vim-repeat'
-" Asynchronous job running
-Plugin 'tpope/vim-dispatch'
-" Git wrapping
-Plugin 'tpope/vim-fugitive'
+" Fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'
 " Support for easily toggling comments
 Plugin 'tpope/vim-commentary'
 " Surround text with chars (brackets, etc.)
@@ -27,35 +37,17 @@ Plugin 'tpope/vim-surround'
 Plugin 'jiangmiao/auto-pairs'
 " Snippet engine
 Plugin 'SirVer/ultisnips'
-" Fuzzy file finder
-Plugin 'ctrlpvim/ctrlp.vim'
 " Better '%' matching
 Plugin 'tmhedberg/matchit'
 " Text alignment commands
 Plugin 'godlygeek/tabular'
-" Markdown highlighting
-Plugin 'plasticboy/vim-markdown'
-" JSON highlighting
-Plugin 'elzr/vim-json'
-" Rust highlighting
-Plugin 'rust-lang/rust.vim'
-" Rust intellisense
-Plugin 'racer-rust/vim-racer'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General defaults
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Filetype auto-detection
 filetype plugin indent on
 
-" UTF-8 encoding
-set encoding=utf8
-" Tab width 4 characters
-set tabstop=4
-set shiftwidth=4
-" Use spaces over tabs
-set expandtab
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General defaults                                                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Tab key moves to the next indent
 set smarttab
 " Tab / shifting moves to closest tabstop
@@ -67,20 +59,20 @@ set smartindent
 " 'Hybrid' number view
 set number
 set relativenumber
-" Show filename
-set laststatus=2
 " Always show current position
 set ruler
+" Show filename
+set laststatus=2
 " Buffer 5 lines above and below the cursor
 set so=5
 " Wrap lines to the window buffer
 set wrap
-" Show column line at 80
-set colorcolumn=80
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 " 'h' and 'l' move across lines
 set whichwrap+=<,>,h,l
+" Allow mouse scrolling
+set mouse=a
 " VCS makes backups and .swp files obsolete - disable them
 set nobackup
 set nowritebackup
@@ -89,8 +81,6 @@ set noswapfile
 set hidden
 " When a file has changed on disk load it without asking
 set autoread
-" Use the unnamedplus ("+) register; specific to Arch Linux
-set clipboard=unnamedplus
 " Case insensitive search unless there are uppercase letters
 set ignorecase
 set smartcase
@@ -112,8 +102,6 @@ set virtualedit+=block
 set noerrorbells
 set novisualbell
 set tm=500
-" Keep folds open on load
-set foldlevelstart=20
 " Turn on the wild menu
 set wildmenu
 " Ignore compiled files
@@ -127,8 +115,12 @@ catch
 endtry
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin settings
+" Plugin settings                                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""
+" Ctrl-P "
+""""""""""
 
 " Remap ctrl-p to ctrl-e
 let g:ctrlp_map = '<c-e>'
@@ -137,6 +129,11 @@ let g:ctrlp_max_height = 30
 " CtrlP should ignore the same files that Git does
 let g:ctrlp_user_command =
       \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+"""""""""""""
+" UltiSnips "
+"""""""""""""
+
 " UltiSnips next and prev positions through tab / shift-tab
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
@@ -173,7 +170,7 @@ endfunction
 autocmd CompleteDone * pclose
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Key mappings and macros
+" Key mappings and macros                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " <leader> key is ','
@@ -186,8 +183,9 @@ noremap ; :
 nnoremap 0 ^
 " Ctrl-d closes current buffer
 nnoremap <C-d> :bd<cr>
-" Clear match highlighting
-nnoremap <silent> <leader><space> :noh<cr>
+" Do not skip over auto-wrapped lines
+nnoremap j gj
+nnoremap k gk
 " New splits
 nnoremap <C-w>\ :vsplit<cr>
 nnoremap <C-w>- :split<cr>
@@ -202,22 +200,16 @@ nnoremap <C-w><C-h> <C-w><C-t><C-w>K
 " Move up and down in autocomplete with <c-j> and <c-k>
 inoremap <expr> <C-j> ("\<C-n>")
 inoremap <expr> <C-k> ("\<C-p>")
-" Quick buffer switching - like cmd-tab'ing
-nnoremap <leader><leader> <c-^>
-" Move down on wrapped lines
-noremap j gj
-noremap k gk
-" Fold with spacebar
-nnoremap <space> za
-vnoremap <space> zf
 " Map '/' to toggle comments with vim-commentary
 nnoremap <C-_> :Commentary<cr>
 vnoremap <C-_> :Commentary<cr>
+" Clear match highlighting
+nnoremap <silent> <leader><space> :noh<cr>
 " :W sudo saves the file (useful for handling permission denied errors)
 command W w !sudo tee % > /dev/null
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colors and highlighting
+" Colors and highlighting                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntax highlighting
@@ -228,3 +220,6 @@ match ErrorMsg '\s\+$'
 colorscheme custom-material
 " No background color
 hi Normal ctermbg=none
+
+" Syntax highlighting
+syntax on
