@@ -200,6 +200,8 @@ nnoremap <C-w><C-h> <C-w><C-t><C-w>K
 " Move up and down in autocomplete with <c-j> and <c-k>
 inoremap <expr> <C-j> ("\<C-n>")
 inoremap <expr> <C-k> ("\<C-p>")
+" Quick buffer switching - like ctrl-tabbing
+nnoremap <leader><leader> <c-^>
 " Map '/' to toggle comments with vim-commentary
 nnoremap <C-_> :Commentary<cr>
 vnoremap <C-_> :Commentary<cr>
