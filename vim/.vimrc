@@ -214,6 +214,8 @@ command W w !sudo tee % > /dev/null
 " Colors and highlighting                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Column marker at column 80
+set colorcolumn=80
 " Syntax highlighting
 syntax on
 " Highlight trailing whitespace
