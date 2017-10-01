@@ -227,3 +227,12 @@ hi Normal ctermbg=none
 
 " Syntax highlighting
 syntax on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Source other .vimrc files
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+for vimrc in systemlist(
+      \ 'find "$HOME" -maxdepth 1 \( -type l -o -type f \) -name ".*.vimrc"')
+  exec 'source' vimrc
+endfor
