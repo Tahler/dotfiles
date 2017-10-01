@@ -88,3 +88,9 @@ LC_ADDRESS=en_US.utf8
 LC_TELEPHONE=en_US.utf8
 LC_MEASUREMENT=en_US.utf8
 LC_IDENTIFICATION=en_US.utf8
+
+# Include other files in $HOME with the form `.*.zshrc`
+
+source $(
+	find "$HOME" -maxdepth 1 \( -type l -o -type f \) -name '.*.zshrc' \
+		| xargs echo)
