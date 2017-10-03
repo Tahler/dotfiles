@@ -8,29 +8,9 @@
 [difftool]
 	prompt = false
 [alias]
-	st = status -s
-	cm = commit
-	cmm = commit -m
-	cma = commit -a
-	cmam = commit -a -m
-	cmA = "!git add -A && git commit"
-	cmAm = "!git add -A && git commit -m"
-	rb = rebase
-	rbc = rebase --continue
-	rbi = rebase -i
-	co = checkout
 	cob = checkout -b
 	cp = cherry-pick
-	b = branch
-	bd = branch -d
-    d = diff
-    dw = diff --word-diff
-	dc = diff --cached
-    dt = difftool
 	root = "!pwd"
-
-    cm-wip = commit -m "WIP"
-    cm-tmp = commit -m "TMP"
 
 	absorb = "!git merge $1 && git branch -d $1"
 
@@ -38,17 +18,9 @@
 
 	redo = commit --amend --no-edit
 
-	r = reset
-	r1 = reset HEAD^
-	r2 = reset HEAD^^
-
 	rf = "!git checkout HEAD -- $1"
 
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-	lg = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --all
-    last = log -1 --stat
+	last = log -1 --stat
 
 	filelog = log -u
 	fl = log -u
