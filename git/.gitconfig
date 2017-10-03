@@ -27,6 +27,7 @@
     dw = diff --word-diff
 	dc = diff --cached
     dt = difftool
+	root = "!pwd"
 
     cm-wip = commit -m "WIP"
     cm-tmp = commit -m "TMP"
