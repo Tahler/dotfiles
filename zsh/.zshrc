@@ -91,6 +91,9 @@ LC_IDENTIFICATION=en_US.utf8
 
 # Include other files in $HOME with the form `.*.zshrc`
 
-source $(
+other_files=$(
 	find "$HOME" -maxdepth 1 \( -type l -o -type f \) -name '.*.zshrc' \
 		| xargs echo)
+if [ -n "$other_files" ]; then
+	source "$other_files"
+fi
