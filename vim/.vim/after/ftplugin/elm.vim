@@ -1,0 +1,1 @@
+Plugin 'ElmCast/elm-vim'
