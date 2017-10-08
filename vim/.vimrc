@@ -41,6 +41,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'tmhedberg/matchit'
 " Text alignment commands
 Plugin 'godlygeek/tabular'
+" VS Code colors
+Plugin 'tomasiser/vim-code-dark'
 
 filetype plugin indent on
 
@@ -219,8 +221,10 @@ set colorcolumn=80
 syntax on
 " Highlight trailing whitespace
 match ErrorMsg '\s\+$'
-" Found in ~/.vim/colors
-colorscheme custom-material
+" Use VS Code dark colorscheme
+set t_Co=256
+set t_ut=
+colorscheme codedark
 " No background color
 hi Normal ctermbg=none
 
