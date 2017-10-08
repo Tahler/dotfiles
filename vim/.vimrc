@@ -56,9 +56,8 @@ set shiftround
 set autoindent
 " Intelligently indent / dedent new lines based on rules
 set smartindent
-" 'Hybrid' number view
+" Show line numbers
 set number
-set relativenumber
 " Always show current position
 set ruler
 " Show filename
