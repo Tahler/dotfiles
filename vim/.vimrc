@@ -33,6 +33,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
 " Surround text with chars (brackets, etc.)
 Plugin 'tpope/vim-surround'
+" Enable '.' repetition for many plugins
+Plugin 'tpope/vim-repeat'
 " Autocomplete braces
 Plugin 'jiangmiao/auto-pairs'
 " Snippet engine
