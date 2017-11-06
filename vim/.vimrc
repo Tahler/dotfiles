@@ -46,6 +46,9 @@ Plugin 'godlygeek/tabular'
 " VS Code colors
 Plugin 'tomasiser/vim-code-dark'
 
+" Elm support
+Plugin 'ElmCast/elm-vim'
+
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
