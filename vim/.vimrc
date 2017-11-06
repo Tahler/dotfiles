@@ -220,10 +220,10 @@ command W w !sudo tee % > /dev/null
 " Colors and highlighting                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Column marker at column 80
-set colorcolumn=80
-" Syntax highlighting
-syntax on
+" Column marker
+set textwidth=80
+set colorcolumn=+1
+
 " Highlight trailing whitespace
 match ErrorMsg '\s\+$'
 " Use VS Code dark colorscheme
