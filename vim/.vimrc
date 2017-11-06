@@ -57,9 +57,6 @@ Plugin 'tmhedberg/matchit'
 " Snippet engine
 Plugin 'SirVer/ultisnips'
 
-" VS Code colors
-Plugin 'tomasiser/vim-code-dark'
-
 " TypeScript support
 Plugin 'leafgarland/typescript-vim'
 
@@ -351,8 +348,7 @@ set colorcolumn=+1
 match ErrorMsg '\s\+$'
 
 " Use VS Code dark colorscheme
-set t_Co=256
-set t_ut=
+" https://github.com/tomasiser/vim-code-dark
 colorscheme codedark
 
 " Syntax highlighting
