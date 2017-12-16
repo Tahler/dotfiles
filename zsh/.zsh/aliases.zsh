@@ -14,3 +14,5 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 alias shutdown='\shutdown now'
+
+alias stow='\stow --target=$HOME *'
