@@ -77,8 +77,9 @@ filetype plugin indent on
 " Display "
 """""""""""
 
-" Show line numbers
+" Show hybrid line numbers
 set number
+set relativenumber
 
 " Show current position
 set ruler
