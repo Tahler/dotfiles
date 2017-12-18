@@ -350,6 +350,8 @@ match ErrorMsg '\s\+$'
 
 " Use VS Code dark colorscheme
 " https://github.com/tomasiser/vim-code-dark
+set t_Co=256
+set t_ut=
 colorscheme codedark
 
 " Syntax highlighting
