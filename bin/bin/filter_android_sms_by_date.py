@@ -7,19 +7,20 @@ import re
 import sys
 
 
-RX_TAG = re.compile('<([^\/].+)\ ')
-RX_DATE = re.compile('date="(.*)"')
+RX_TAG = re.compile('<([^\/]\S*)')
+RX_DATE = re.compile('date="(\d+)"')
 TURNING_DATE = 1498112075000 # 22 June 2017
 OUTPUT_FILE_NAME = 'output.xml'
 
 
 def append_line(output_file, line):
-    output_file.write(line + '\n')
+    output_file.write(line)
 
 
 def extract(rx, line):
-    groups = rx.match(line)
-    return groups.group(1)
+    groups = rx.search(line)
+    extracted = groups.group(1)
+    return extracted
 
 
 def extract_tag(line):
@@ -39,18 +40,20 @@ def filter_xml(input_file_name, output_file_name, filter):
                 if entered_mms:
                     if keep_mms:
                         append_line(output_file, line)
-                    if line.startswith('</mms'):
+                    if line.lstrip().startswith('</mms'):
                         entered_mms = False
                         keep_mms = False
+                elif line.lstrip().startswith('</'):
+                    append_line(output_file, line)
                 else:
                     tag = extract_tag(line)
                     if tag == 'sms':
-                        sms_date = extract_date(line)
+                        sms_date = int(extract_date(line))
                         if filter(sms_date):
                             append_line(output_file, line)
-                    else if tag == 'mms':
+                    elif tag == 'mms':
                         entered_mms = True
-                        mms_date = extract_date(line)
+                        mms_date = int(extract_date(line))
                         if filter(mms_date):
                             keep_mms = True
                             append_line(output_file, line)
@@ -62,7 +65,7 @@ def filter_xml(input_file_name, output_file_name, filter):
 
 def filter(sms_date, turning_date):
     # TODO: flip the operator here
-    return sms_date < turning_date
+    return sms_date > turning_date
 
 
 def create_filter(turning_date):
@@ -71,7 +74,7 @@ def create_filter(turning_date):
 
 def main():
     file_name = sys.argv[1]
-    date = sys.argv[2]
+    # date = sys.argv[2]
     filter_xml(file_name, OUTPUT_FILE_NAME, create_filter(TURNING_DATE))
 
 
