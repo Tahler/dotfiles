@@ -81,9 +81,6 @@ filetype plugin indent on
 set number
 set relativenumber
 
-" Show current position
-set ruler
-
 """""""""""""""
 " Status line "
 """""""""""""""
@@ -104,7 +101,7 @@ set statusline+=\ %y
 set statusline+=%=
 
 " Current/total lines
-set statusline+=%l/%L
+set statusline+=%l,%v\ "
 
 """"""""
 " Tabs "
