@@ -57,6 +57,9 @@ Plugin 'tmhedberg/matchit'
 " Snippet engine
 Plugin 'SirVer/ultisnips'
 
+" Copy over SSH
+Plugin 'haya14busa/vim-poweryank'
+
 " TypeScript support
 Plugin 'leafgarland/typescript-vim'
 
@@ -241,6 +244,9 @@ autocmd! CompleteDone * pclose
 
 " Auto reload Vim config on save
 autocmd! BufWritePost vimrc,*.vimrc source %
+
+" Copying to system clipboard with <leader>y
+map <leader>y <plug>(operator-poweryank-osc52)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings and macros                                                      "
