@@ -1,0 +1,33 @@
+priority -50
+
+extends javascript
+
+snippet class "class" b
+class ${1:CLASS_NAME} $2{
+	$3
+}
+endsnippet
+
+snippet a-component "Angular Component" b
+import {Component, OnInit} from '@angular/core';
+
+@Component({
+	selector: '${1:selector-name}',
+	templateUrl: '${2:name}.ng.html',
+})
+export class ${3:Name} implements OnInit {
+	constructor() {}
+
+	ngOnInit() {}
+}
+endsnippet
+
+snippet a-service "Angular Service" b
+import {Injectable} from '@angular/core';
+
+@Injectable()
+export class ${1:Name}Service {
+	constructor() {}
+}
+endsnippet
+

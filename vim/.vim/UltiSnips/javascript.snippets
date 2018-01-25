@@ -1,0 +1,23 @@
+priority -50
+
+snippet imp "import IMPORT from '';" b
+import $2 from '$1';
+endsnippet
+
+snippet impd "import {IMPORT} from '';" b
+import {$2} from '$1';
+endsnippet
+
+snippet impg "const IMPORT = goog.require('PACKAGE');" b
+const $2 = goog.require('$1');
+endsnippet
+
+snippet impgd "const {IMPORT} = goog.require('PACKAGE');" b
+const {$2} = goog.require('$1');
+endsnippet
+
+snippet class "class" b
+class ${1:CLASS_NAME} $2{
+	$3
+}
+endsnippet
