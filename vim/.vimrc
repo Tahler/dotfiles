@@ -330,10 +330,10 @@ let g:ctrlp_user_command =
 " UltiSnips "
 """""""""""""
 
-" UltiSnips next and prev positions through tab / shift-tab
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-tab>'
+" UltiSnips next and prev positions through c-j and c-k
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
 
 " Python snippets should use Google style docstrings
 let g:ultisnips_python_style = 'google'
