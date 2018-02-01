@@ -45,9 +45,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Text alignment commands
 Plugin 'junegunn/vim-easy-align'
 
-" Copying to the system clipboard with text-objects and motions
-Plugin 'christoomey/vim-system-copy'
-
 " Auto close HTML tags
 Plugin 'alvan/vim-closetag'
 
