@@ -27,6 +27,9 @@ call vundle#begin()
 " Let vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
 
+" EditorConfig support
+Plugin 'editorconfig/editorconfig-vim'
+
 " Surround text with chars (brackets, etc.)
 Plugin 'tpope/vim-surround'
 
