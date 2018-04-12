@@ -97,3 +97,5 @@ other_files=$(
 if [ -n "$other_files" ]; then
 	source "$other_files"
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
