@@ -1,2 +1,5 @@
 .netrwhist
 tmp/
+# Don't track vim-plug
+autoload/plug.vim
+plugged/

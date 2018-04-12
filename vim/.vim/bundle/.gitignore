@@ -1,6 +1,0 @@
-# Don't track plugins
-*
-# Except for the Vundle.vim submodule
-!Vundle.vim
-!.gitignore
-

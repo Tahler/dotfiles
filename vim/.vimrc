@@ -16,64 +16,58 @@ set nocompatible
 " Plugins                                                                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""
-" Vundle "
-""""""""""
+" Install vim-plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let vundle manage itself
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Colorscheme
-Plugin 'tomasiser/vim-code-dark'
+Plug 'tomasiser/vim-code-dark'
 
 " EditorConfig support
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 " Surround text with chars (brackets, etc.)
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Autocomplete braces
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 " Support for easily toggling comments
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " Enable '.' repetition for many plugins
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " Fuzzy file finder
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Text alignment commands
-Plugin 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-easy-align'
 
 " Auto close HTML tags
-Plugin 'alvan/vim-closetag'
+Plug 'alvan/vim-closetag'
 
 " Better '%' matching
-Plugin 'tmhedberg/matchit'
+Plug 'tmhedberg/matchit'
 
 " Snippet engine
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " Copy over SSH
-Plugin 'haya14busa/vim-poweryank'
+Plug 'haya14busa/vim-poweryank'
 
 " TypeScript support
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 
 " Elm support
-Plugin 'ElmCast/elm-vim'
+Plug 'ElmCast/elm-vim'
 
-call vundle#end()
-
-" Filetype detection via the detect, plugin, and indent directories under ~/.vim
-" Required after Vundle plugins
-filetype plugin indent on
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Options                                                                      "
