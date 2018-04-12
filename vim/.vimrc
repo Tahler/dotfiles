@@ -27,6 +27,9 @@ call vundle#begin()
 " Let vundle manage itself
 Plugin 'VundleVim/Vundle.vim'
 
+" Colorscheme
+Plugin 'tomasiser/vim-code-dark'
+
 " EditorConfig support
 Plugin 'editorconfig/editorconfig-vim'
 
