@@ -1,9 +1,3 @@
-export GOPATH=$HOME/go
-export CARGO_PATH=$HOME/.cargo/bin
-export CUDA_PATH=/usr/local/cuda-9.0/bin
-export PATH=$HOME/bin:/usr/local/bin:$GOPATH/bin:$CARGO_PATH:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-
 export EDITOR=vim
 export TERM=xterm-256color
 
