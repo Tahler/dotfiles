@@ -65,7 +65,7 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export SSH_KEY_PATH=$HOME/.ssh/rsa_id
+export SSH_KEY_PATH=$HOME/.ssh/id_rsa
 
 # Bug concerning beginning '%'
 unsetopt PROMPT_SP
@@ -88,10 +88,10 @@ LC_IDENTIFICATION=en_US.utf8
 # Include other files in $HOME with the form `.*.zshrc`
 
 other_files=$(
-	find "$HOME" -maxdepth 1 \( -type l -o -type f \) -name '.*.zshrc' \
-		| xargs echo)
+  find "$HOME" -maxdepth 1 \( -type l -o -type f \) -name '.*.zshrc' \
+    | xargs echo)
 if [ -n "$other_files" ]; then
-	source "$other_files"
+  source "$other_files"
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
