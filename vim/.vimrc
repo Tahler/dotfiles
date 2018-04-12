@@ -43,8 +43,9 @@ Plug 'tpope/vim-commentary'
 " Enable '.' repetition for many plugins
 Plug 'tpope/vim-repeat'
 
-" Fuzzy file finder
-Plug 'ctrlpvim/ctrlp.vim'
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 
 " Text alignment commands
 Plug 'junegunn/vim-easy-align'
@@ -295,6 +296,9 @@ nnoremap <leader><leader> <c-^>
 nnoremap <silent> <C-_> :Commentary<cr>
 vnoremap <silent> <C-_> :Commentary<cr>
 
+" Fuzzy file find from git
+nnoremap <C-e> :GFiles<cr>
+
 " Quick search and replace
 nnoremap <leader>sub :%s///g<left><left>
 vnoremap <leader>sub :s///g<left><left>
@@ -308,20 +312,6 @@ command! W w !sudo tee % > /dev/null
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin settings                                                              "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""
-" Ctrl-P "
-""""""""""
-
-" Remap ctrl-p to ctrl-e
-let g:ctrlp_map = '<c-e>'
-
-" Let ctrl-p have up to 30 results.
-let g:ctrlp_max_height = 30
-
-" CtrlP should ignore the same files that Git does
-let g:ctrlp_user_command =
-      \ ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 """""""""""""
 " UltiSnips "
