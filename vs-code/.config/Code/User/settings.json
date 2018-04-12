@@ -55,7 +55,7 @@
         // Use the new Rust error format (RUST_NEW_ERROR_FORMAT=true). Note: This flag is mutually exclusive with `useJsonErrors`.
         "rust.useNewErrorFormat": false
     },
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "vim.disableAnnoyingNeovimMessage": true,
     "git.enableSmartCommit": true
 }
