@@ -67,6 +67,9 @@ source $ZSH/oh-my-zsh.sh
 
 export SSH_KEY_PATH=$HOME/.ssh/id_rsa
 
+# Don't change directories if not a command
+unsetopt AUTO_CD
+
 # Bug concerning beginning '%'
 unsetopt PROMPT_SP
 
