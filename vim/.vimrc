@@ -299,8 +299,8 @@ nnoremap <leader><leader> <c-^>
 nnoremap <silent> <C-_> :Commentary<cr>
 vnoremap <silent> <C-_> :Commentary<cr>
 
-" Fuzzy file find from git
-nnoremap <C-e> :GFiles<cr>
+" Fuzzy file finder with ctrl-e
+nnoremap <C-e> :Files<cr>
 
 " Quick search and replace
 nnoremap <leader>sub :%s///g<left><left>
