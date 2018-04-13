@@ -28,6 +28,5 @@
         "editor.insertSpaces": true
     },
     "window.zoomLevel": 1,
-    "vim.disableAnnoyingNeovimMessage": true,
     "git.enableSmartCommit": true
 }
