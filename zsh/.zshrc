@@ -98,3 +98,13 @@ if [ -n "$other_files" ]; then
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+exists () {
+  type "$1" >/dev/null 2>/dev/null
+}
+if exists kubectl; then
+    source <(kubectl completion zsh)
+fi
+if exists helm; then
+    source <(helm completion zsh)
+fi
