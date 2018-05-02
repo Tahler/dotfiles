@@ -48,5 +48,10 @@
         "key": "ctrl+shift+v",
         "command": "editor.action.clipboardPasteAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
     }
 ]
