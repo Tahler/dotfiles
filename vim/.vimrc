@@ -71,6 +71,9 @@ Plug 'leafgarland/typescript-vim'
 " Elm support
 Plug 'ElmCast/elm-vim'
 
+" Go support
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
