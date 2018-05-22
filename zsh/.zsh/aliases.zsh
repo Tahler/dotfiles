@@ -7,6 +7,7 @@ alias vi=vim
 
 alias gcd='cd $(git rev-parse --show-toplevel)'
 alias gdt='git difftool'
+alias glu='git pull upstream $(current_branch)'
 
 alias grep='grep --color=auto'
 
