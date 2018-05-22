@@ -14,3 +14,6 @@ alias grep='grep --color=auto'
 alias shutdown='\shutdown now'
 
 alias stow='\stow --target=$HOME *'
+
+alias k='kubectl'
+alias ki='kubectl -n istio-system'
