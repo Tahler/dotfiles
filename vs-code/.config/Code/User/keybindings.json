@@ -55,6 +55,16 @@
         "when": "terminalFocus"
     },
     {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
         "key": "ctrl+e",
         "command": "-workbench.action.quickOpen"
     }
