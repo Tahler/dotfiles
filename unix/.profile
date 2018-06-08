@@ -1,8 +1,8 @@
 export GOPATH=$HOME/go
-export CARGO_PATH=$HOME/.cargo/bin
-export YARN_PATH=$HOME/.yarn/bin
-export CUDA_PATH=/usr/local/cuda-9.0/bin
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$YARN_PATH:$CARGO_PATH:$PATH
+export CARGO_BIN=$HOME/.cargo/bin
+export YARN_BIN=$HOME/.yarn/bin
+export CUDA_BIN=/usr/local/cuda-9.0/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$YARN_BIN:$CARGO_BIN:$PATH
 
 export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
