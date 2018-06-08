@@ -28,6 +28,7 @@
     ],
     "vim.smartcase": true,
 
+    "python.linting.mypyEnabled": true,
     "python.formatting.provider": "yapf",
     "[python]": {
         "editor.formatOnSave": true,
