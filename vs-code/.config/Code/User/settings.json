@@ -28,6 +28,8 @@
     ],
     "vim.smartcase": true,
 
+    "python.formatting.provider": "yapf",
+
     "[markdown]": {
         "editor.rulers": [80],
     },
