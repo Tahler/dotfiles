@@ -2,7 +2,8 @@ export GOPATH=$HOME/go
 CARGO_BIN=$HOME/.cargo/bin
 YARN_BIN=$HOME/.yarn/bin
 CUDA_BIN=/usr/local/cuda-9.0/bin
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$YARN_BIN:$CARGO_BIN:$PATH
+CABAL_BIN=$HOME/.cabal/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$CABAL_BIN:$YARN_BIN:$CARGO_BIN:$PATH
 
 export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
@@ -23,3 +24,4 @@ export GITHUB_USER=Tahler
 export KUBECONFIG=${HOME}/.kube/config
 # Alternatively, for Minikube:
 # export KUBECONFIG=${GOPATH}/src/istio.io/istio/.circleci/config
+
