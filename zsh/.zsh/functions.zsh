@@ -10,3 +10,7 @@ function rm() {
 		command rm $@
 	fi
 }
+
+function find_replace() {
+  find ./ -type f -exec sed -i -e "s/$1/$2/g" {} \;
+}
