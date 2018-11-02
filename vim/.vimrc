@@ -50,30 +50,6 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
-" Text alignment commands
-Plug 'junegunn/vim-easy-align'
-
-" Auto close HTML tags
-Plug 'alvan/vim-closetag'
-
-" Better '%' matching
-Plug 'tmhedberg/matchit'
-
-" Snippet engine
-Plug 'SirVer/ultisnips'
-
-" Copy over SSH
-Plug 'haya14busa/vim-poweryank'
-
-" TypeScript support
-Plug 'leafgarland/typescript-vim'
-
-" Elm support
-Plug 'ElmCast/elm-vim'
-
-" Go support
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -314,24 +290,6 @@ nnoremap <silent> <leader><space> :noh<cr>
 
 " :W sudo saves the file (useful for handling permission denied errors)
 command! W w !sudo tee % > /dev/null
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin settings                                                              "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""
-" UltiSnips "
-"""""""""""""
-
-" UltiSnips next and prev positions through c-j and c-k
-let g:UltiSnipsExpandTrigger = '<c-j>'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-
-" Python snippets should use Google style docstrings
-let g:ultisnips_python_style = 'google'
-let g:ultisnips_python_quoting_style = 'single'
-let g:ultisnips_python_triple_quoting_style = 'double'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and highlighting                                                      "
