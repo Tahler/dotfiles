@@ -101,7 +101,7 @@ set statusline=\ %f
 " Modified flag
 set statusline+=\ %m
 
-" Filetype
+" File type
 set statusline+=\ %y
 
 " Switch to the right side
