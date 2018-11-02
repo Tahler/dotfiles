@@ -168,7 +168,7 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 """""""""""""""""
 
 " Never use Ex mode
-map Q <Nop>
+map Q <nop>
 
 " Buffer 5 lines above and below the cursor
 set scrolloff=5
@@ -234,11 +234,11 @@ endfunction
 autocmd BufWrite *.* :call DeleteTrailingWhitespace()
 
 " Auto paste mode (prevent auto-indenting pasted text)
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+let &t_SI .= "\<esc>[?2004h"
+let &t_EI .= "\<esc>[?2004l"
+inoremap <special> <expr> <esc>[200~ XTermPasteBegin()
 function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
+  set pastetoggle=<esc>[201~
   set paste
   return ""
 endfunction
@@ -268,7 +268,7 @@ nnoremap 0 ^
 nnoremap ^ 0
 
 " Ctrl-d closes current buffer
-nnoremap <C-d> :bd<cr>
+nnoremap <c-d> :bd<cr>
 
 " Do not skip over auto-wrapped lines
 nnoremap j gj
@@ -278,32 +278,32 @@ nnoremap k gk
 nnoremap gJ kddpkJ
 
 " New splits
-nnoremap <C-w>\ :vsplit<cr>
-nnoremap <C-w>- :split<cr>
+nnoremap <c-w>\ :vsplit<cr>
+nnoremap <c-w>- :split<cr>
 
 " Faster movement between splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " Faster rearrangement of splits
-nnoremap <C-w><C-v> <C-w><C-t><C-w>H
-nnoremap <C-w><C-h> <C-w><C-t><C-w>K
+nnoremap <c-w><c-v> <c-w><c-t><c-w>H
+nnoremap <c-w><c-h> <c-w><c-t><c-w>K
 
 " Move up and down in autocomplete with <c-j> and <c-k>
-inoremap <expr> <C-j> ("\<C-n>")
-inoremap <expr> <C-k> ("\<C-p>")
+inoremap <expr> <c-j> ("\<c-n>")
+inoremap <expr> <c-k> ("\<c-p>")
 
 " Quick buffer switching - like ctrl-tabbing
 nnoremap <leader><leader> <c-^>
 
 " Map '/' to toggle comments with vim-commentary
-nnoremap <silent> <C-_> :Commentary<cr>
-vnoremap <silent> <C-_> :Commentary<cr>
+nnoremap <silent> <c-_> :Commentary<cr>
+vnoremap <silent> <c-_> :Commentary<cr>
 
 " Fuzzy file finder with ctrl-e
-nnoremap <C-e> :Files<cr>
+nnoremap <c-e> :Files<cr>
 
 " Quick search and replace
 nnoremap <leader>sub :%s///g<left><left>
