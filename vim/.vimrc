@@ -274,7 +274,7 @@ nnoremap <c-d> :bd<cr>
 nnoremap j gj
 nnoremap k gk
 
-" Reverse of join (J) with gJ
+" gJ: Move the above line to the cursor.
 nnoremap gJ kddpkJ
 
 " New splits
