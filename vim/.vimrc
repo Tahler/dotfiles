@@ -107,8 +107,8 @@ set statusline+=\ %y
 " Switch to the right side
 set statusline+=%=
 
-" Current/total lines
-set statusline+=%l,%v\ "
+" $currentLine/$numLines $columnNum
+set statusline+=%l/%L\ %v\ "
 
 """"""""
 " Tabs "
