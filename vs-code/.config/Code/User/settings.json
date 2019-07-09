@@ -29,6 +29,14 @@
             "before": [";"],
             "after": [":"],
         },
+        {
+            "before": ["k"],
+            "after": ["g", "k"],
+        },
+        {
+            "before": ["j"],
+            "after": ["g", "j"],
+        },
     ],
     "vim.smartcase": true,
 
