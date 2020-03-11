@@ -12,7 +12,7 @@
     "terminal.integrated.showExitAlert": false,
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
 
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
 
     "files.associations": {
         "Dockerfile*": "dockerfile",
