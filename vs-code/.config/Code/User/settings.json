@@ -4,6 +4,8 @@
     "editor.lineNumbers": "relative",
     "editor.tabSize": 2,
 
+    "explorer.compactFolders": false,
+
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
 
