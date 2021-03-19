@@ -3,6 +3,7 @@
     "editor.wordWrap": "on",
     "editor.lineNumbers": "relative",
     "editor.tabSize": 2,
+    "editor.insertSpaces": true,
 
     "explorer.compactFolders": false,
 
