@@ -65,15 +65,5 @@
         "editor.rulers": [100],
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
-    },
-
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true
-    },
-    "gitlens.gitExplorer.files.layout": "auto",
-    "gitlens.historyExplorer.enabled": false,
-    "gitlens.hovers.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.codeLens.enabled": false,
+    }
 }
