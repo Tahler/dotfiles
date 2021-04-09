@@ -13,14 +13,7 @@
 
     "git.enableSmartCommit": true,
 
-    "terminal.integrated.showExitAlert": false,
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-
     "window.zoomLevel": 2,
-
-    "files.associations": {
-        "Dockerfile*": "dockerfile",
-    },
 
     "files.watcherExclude": {
         "**/.git/objects/**": true,
@@ -49,21 +42,5 @@
             "after": ["g", "j"],
         },
     ],
-    "vim.smartcase": true,
-
-    "python.linting.mypyEnabled": true,
-    "python.formatting.provider": "yapf",
-    "[python]": {
-        "editor.formatOnSave": true,
-    },
-
-    "[markdown]": {
-        "editor.rulers": [80],
-    },
-
-    "[javascript]": {
-        "editor.rulers": [100],
-        "editor.tabSize": 2,
-        "editor.insertSpaces": true,
-    }
+    "vim.smartcase": true
 }
