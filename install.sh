@@ -1,11 +1,24 @@
 #!/bin/bash
 
-if ! dpkg -s stow > /dev/null ; then
-  apt-get -y install stow
-fi
-
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-
 cd "${BASE_DIR}"
 
-stow git tmux unix vim vs-code zsh
+function exists() {
+  type "$1" >/dev/null 2>/dev/null
+}
+
+function install_if_not_exists() {
+  if ! exists "$1"; then
+    sudo apt-get -y install "$1"
+  fi
+}
+
+install_if_not_exists git
+install_if_not_exists ripgrep
+install_if_not_exists stow
+install_if_not_exists tmux
+install_if_not_exists vim
+
+stow --target="$HOME" git tmux unix vim vs-code zsh
+
+"$HOME/.fzf/install" --all --no-fish
