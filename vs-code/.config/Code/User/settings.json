@@ -10,11 +10,6 @@
 
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
-
-    "git.enableSmartCommit": true,
-
-    "window.zoomLevel": 2,
-
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
@@ -22,11 +17,14 @@
         "**/node_modules/*/**": true
     },
 
+
+    "git.enableSmartCommit": true,
+
     "vim.handleKeys": {
         "<C-b>": false,
         "<C-d>": false,
         "<C-f>": false,
-        "<C-w>": false,
+        "<C-w>": false
     },
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -42,5 +40,7 @@
             "after": ["g", "j"],
         },
     ],
-    "vim.smartcase": true
+    "vim.smartcase": true,
+
+    "window.zoomLevel": 2
 }
