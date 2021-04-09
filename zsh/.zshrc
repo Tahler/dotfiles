@@ -4,4 +4,6 @@ ZSH_THEME="custom-lambda"
 
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
