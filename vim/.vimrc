@@ -31,9 +31,6 @@ Plug 'tomasiser/vim-code-dark'
 " EditorConfig support
 Plug 'editorconfig/editorconfig-vim'
 
-" Git support
-Plug 'tpope/vim-fugitive'
-
 " Surround text with chars (brackets, etc.)
 Plug 'tpope/vim-surround'
 
