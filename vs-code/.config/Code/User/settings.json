@@ -1,10 +1,12 @@
 {
     "editor.rulers": [80],
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "off",
     "editor.lineNumbers": "relative",
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
+    "editor.cursorStyle": "line",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 
     "explorer.compactFolders": false,
 
@@ -17,8 +19,9 @@
         "**/node_modules/*/**": true
     },
 
-
     "git.enableSmartCommit": true,
+
+    "terminal.integrated.showExitAlert": false,
 
     "vim.handleKeys": {
         "<C-b>": false,
@@ -41,6 +44,34 @@
         },
     ],
     "vim.smartcase": true,
-
-    "window.zoomLevel": 2
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "google.g3"
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "window.zoomLevel": 1
 }
