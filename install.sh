@@ -13,6 +13,9 @@ function install_if_not_exists() {
   fi
 }
 
+git submodule update --init --recursive
+
+sudo apt-get update
 install_if_not_exists git
 install_if_not_exists ripgrep
 install_if_not_exists stow
