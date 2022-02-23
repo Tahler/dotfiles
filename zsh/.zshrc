@@ -27,3 +27,4 @@ source "$ZSH/oh-my-zsh.sh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 [ -f /etc/bash_completion.d/g4d ] && source /etc/bash_completion.d/g4d
+[ -f /etc/bash_completion.d/hgd ] && source /etc/bash_completion.d/hgd
