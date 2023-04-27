@@ -11,6 +11,7 @@ fi
 export GOPATH="$HOME/go"
 export GOBIN="$GOPATH/bin"
 
+export PATH="/snap/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$GOBIN:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
