@@ -19,9 +19,8 @@ sudo apt-get update
 install_if_not_exists git
 install_if_not_exists ripgrep
 install_if_not_exists stow
-install_if_not_exists tmux
 install_if_not_exists vim
 
-stow --target="$HOME" git tmux unix vim vs-code zsh
+stow --target="$HOME" git unix vim vs-code zsh
 
 "$HOME/.fzf/install" --all --no-fish
