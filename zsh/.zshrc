@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_CUSTOM="$HOME/.zsh"
-ZSH_THEME="custom-lambda"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(git)
 

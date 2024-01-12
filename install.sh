@@ -24,3 +24,5 @@ install_if_not_exists vim
 stow --target="$HOME" git unix vim vs-code zsh
 
 "$HOME/.fzf/install" --all --no-fish
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
