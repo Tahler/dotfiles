@@ -4,20 +4,32 @@
         "command": "editor.action.triggerParameterHints",
         "when": "editorTextFocus"
     },
+    // Scrolling through Intellisense.
     {
         "key": "ctrl+j",
         "command": "extension.vim_ctrl+n",
-        "when": "editorTextFocus && vim.use<C-n> && !inDebugRepl"
+        "when": "suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible"
+    },
+    // Scrolling through the editor.
+    {
+        "key": "ctrl+j",
+        "command": "scrollLineDown",
+        "when": "editorTextFocus && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "scrollLineUp",
+        "when": "editorTextFocus && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+n",
         "command": "-extension.vim_ctrl+n",
         "when": "editorTextFocus && vim.use<C-n> && !inDebugRepl"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "extension.vim_ctrl+p",
-        "when": "suggestWidgetVisible && vim.use<C-p>"
     },
     {
         "key": "ctrl+p",
@@ -79,5 +91,10 @@
     {
         "key": "ctrl+shift+j",
         "command": "workbench.action.terminal.runSelectedText"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-extension.vim_ctrl+i",
+        "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl"
     }
 ]
