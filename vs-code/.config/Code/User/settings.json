@@ -73,4 +73,5 @@
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
+    "window.titleBarStyle": "custom",
 }
