@@ -33,8 +33,5 @@ source "$ZSH/oh-my-zsh.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[ -f /etc/bash_completion.d/g4d ] && source /etc/bash_completion.d/g4d
-[ -f /etc/bash_completion.d/hgd ] && source /etc/bash_completion.d/hgd
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
