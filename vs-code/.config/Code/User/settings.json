@@ -75,4 +75,5 @@
     },
     "window.titleBarStyle": "custom",
     "window.zoomLevel": -1,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
 }
