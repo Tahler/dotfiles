@@ -74,4 +74,5 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "window.titleBarStyle": "custom",
+    "window.zoomLevel": -1,
 }
